@@ -1,0 +1,17 @@
+match_date,team,opponent,team_score,opponent_score,tournament,elo_change,new_elo,rank_change,new_rank,group
+2026-06-11,Czechia,South Korea,1,2,World Cup,-28,1712,-7,42,A
+2026-06-11,Mexico,South Africa,2,0,World Cup,6,1881,0,18,A
+2026-06-11,South Africa,Mexico,0,2,World Cup,-6,1511,0,80,A
+2026-06-11,South Korea,Czechia,2,1,World Cup,28,1786,7,26,A
+2026-06-12,Bosnia and Herzegovina,Canada,1,1,World Cup,21,1616,5,60,B
+2026-06-12,Canada,Bosnia and Herzegovina,1,1,World Cup,-21,1767,-8,33,B
+2026-06-12,Paraguay,USA,1,4,World Cup,-54,1780,-4,26,D
+2026-06-12,USA,Paraguay,4,1,World Cup,54,1780,12,26,D
+2026-06-13,Australia,Turkey,2,0,World Cup,62,1839,6,23,D
+2026-06-13,Brazil,Morocco,1,1,World Cup,-13,1978,-2,7,C
+2026-06-13,Haiti,Scotland,0,1,World Cup,-12,1536,-2,75,C
+2026-06-13,Morocco,Brazil,1,1,World Cup,13,1840,1,22,C
+2026-06-13,Qatar,Switzerland,1,1,World Cup,26,1447,6,90,B
+2026-06-13,Scotland,Haiti,1,0,World Cup,12,1794,0,25,C
+2026-06-13,Switzerland,Qatar,1,1,World Cup,-26,1865,-2,19,B
+2026-06-13,Turkey,Australia,0,2,World Cup,-62,1849,-8,21,D
