@@ -15,3 +15,7 @@ match_date,team,opponent,team_score,opponent_score,tournament,elo_change,new_elo
 2026-06-13,Scotland,Haiti,1,0,World Cup,12,1794,0,25,C
 2026-06-13,Switzerland,Qatar,1,1,World Cup,-26,1865,-2,19,B
 2026-06-13,Turkey,Australia,0,2,World Cup,-62,1849,-8,21,D
+2026-06-14,Germany,Curaçao,7,1,World Cup,7,1939,1,9,E
+2026-06-14,Curaçao,Germany,1,7,World Cup,-7,1427,-2,94,E
+2026-06-14,Japan,Netherlands,2,2,World Cup,4,1910,0,13,F
+2026-06-14,Netherlands,Japan,2,2,World Cup,-4,1944,0,8,F
