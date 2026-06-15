@@ -36,7 +36,7 @@ def _placeholder(group_value: str):
             [
                 dmc.Text(f"Group {group_value} still has no captured results", className="section-title", ta="center"),
                 dmc.Text(
-                    "Once eloratings.net posts a result for one of these teams, the dumbbell chart will appear here automatically.",
+                    "Once the scheduler captures a finished World Cup match for one of these teams, the dumbbell chart will appear here automatically.",
                     c="#7A8099",
                     ta="center",
                     maw=520,
