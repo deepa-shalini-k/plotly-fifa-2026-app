@@ -12,11 +12,11 @@ permissions:
   contents: write
 
 concurrency:
-  group: scrape-elo-predictions
+  group: run-elo-calculations
   cancel-in-progress: false
 
 jobs:
-  scrape:
+  calculate:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     env:
