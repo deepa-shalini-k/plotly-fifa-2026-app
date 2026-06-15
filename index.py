@@ -138,6 +138,15 @@ def toggle_navbar(opened: bool, navbar: dict) -> dict:
 
 
 @callback(
+    Output("shell-burger", "opened"),
+    Input("shell-location", "pathname"),
+    prevent_initial_call=True,
+)
+def close_navbar_on_route_change(_: str) -> bool:
+    return False
+
+
+@callback(
     Output("app-navbar", "children"),
     Output("ticker-content", "children"),
     Input("shell-location", "pathname"),
