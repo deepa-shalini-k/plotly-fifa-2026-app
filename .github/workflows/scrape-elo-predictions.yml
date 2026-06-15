@@ -1,5 +1,8 @@
 name: Scrape Elo Predictions
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
 on:
   workflow_dispatch:
   schedule:
@@ -15,17 +18,23 @@ concurrency:
 jobs:
   scrape:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     env:
       PLOTLY_FIFA_PREDICTIONS_SOURCE: local
       PYTHONUNBUFFERED: "1"
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          ref: ${{ github.ref }}
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: requirements.txt
 
       - name: Install dependencies
         run: python -m pip install -r requirements.txt
@@ -43,4 +52,6 @@ jobs:
             exit 0
           fi
           git commit -m "Update Elo prediction data"
-          git push
+          branch="${GITHUB_REF_NAME:-main}"
+          git pull --rebase origin "${branch}"
+          git push origin "HEAD:${branch}"
