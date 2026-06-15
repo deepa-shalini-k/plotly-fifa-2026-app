@@ -13,8 +13,8 @@ The app is built to feel useful on the move: it uses a responsive `AppShell`, co
 - Tracks goal-by-goal match events with scorer, minute, assist, cards, and substitutions.
 - Provides team-level analysis across all 48 qualified nations, including squad age profile, latest lineup, goal timing splits, and match-result timeline.
 - Builds player and team leaderboards for goals, assists, goal involvements, cards, and clean sheets.
-- Adds an Elo intelligence layer powered by `eloratings.net`, currently exposed as:
-  - overall rating/rank movement across tournament days
+- Adds an Elo intelligence layer anchored to the 11 June Elo baseline and refreshed from finished `football-data.org` World Cup matches, currently exposed as:
+  - overall rating/rank movement across finished-match checkpoints
   - group-by-group Elo swings after captured World Cup results
 
 ## App Tour
@@ -77,15 +77,15 @@ This page rotates between metrics such as goals, assists, goal involvements, yel
 
 Two prediction pages sit under the Elo section of the nav:
 
-- `Overall Rankings` (`/predictions/elo-ratings`): tournament-day movement in global Elo ranking across the 48 qualified teams
+- `Overall Rankings` (`/predictions/elo-ratings`): checkpoint-by-checkpoint movement in global Elo ranking across the 48 qualified teams
 - `Group Ratings` (`/predictions/group-ratings`): per-group dumbbell charts showing each team's Elo change before and after captured World Cup matches
 
 The codebase does not currently render explicit win-probability, qualification-probability, or outright-winner pages. The Elo pipeline in this repo is the foundation for those kinds of forecast layers, but the shipped UI today focuses on ranking movement and match-by-match rating swings.
 
 ## Data Sources
 
-- `football-data.org`: live fixtures, match details, standings, scorers, teams, and player/person records
-- `eloratings.net`: global Elo ratings, latest World Cup results, and historical daily rating deltas used for prediction visuals
+- `football-data.org`: live fixtures, match details, standings, scorers, teams, player/person records, and the finished World Cup results used to recalculate Elo after every match
+- `eloratings.net`: the original world Elo methodology and the frozen 11 June baseline table committed into `elo_snapshots.csv`
 - Hugging Face dataset: player headshots served from `https://huggingface.co/datasets/deepa-shalini/fifa-player-images`
 
 Relevant source links:
@@ -187,26 +187,20 @@ The prediction layer is driven by two tracked CSVs in the repo:
 - [elo_snapshots.csv](/Users/deepa.shalini/Documents/GitHub/plotly_fifa/elo_snapshots.csv:1)
 - [match_results.csv](/Users/deepa.shalini/Documents/GitHub/plotly_fifa/match_results.csv:1)
 
-### How the scraper works
+### How the Elo calculator works
 
-[scraper.py](/Users/deepa.shalini/Documents/GitHub/plotly_fifa/scraper.py:1) pulls structured TSV/text feeds from `eloratings.net`:
-
-- `en.teams.tsv`
-- `en.tournaments.tsv`
-- `World.tsv`
-- `latest.tsv`
-- `graph.tsv`
+[calculate_elo.py](/Users/deepa.shalini/Documents/GitHub/plotly_fifa/calculate_elo.py:1) now rebuilds the Elo layer from `football-data.org` match results while keeping the committed 11 June Elo table as the tournament baseline.
 
 It then:
 
-1. normalizes team names to the 48 qualified World Cup teams
-2. captures the latest global Elo table into snapshot rows
-3. parses the compressed `graph.tsv` payload to reconstruct day-by-day rating deltas
-4. backfills historical tournament-day snapshots from those deltas
-5. captures World Cup match result rows for both teams in each fixture
-6. deduplicates and prunes the CSV outputs before saving
+1. loads the earliest complete 48-team snapshot from `elo_snapshots.csv` as the frozen tournament baseline
+2. fetches finished World Cup matches from `football-data.org`
+3. applies the World Football Elo formula in code after each completed match
+4. writes one snapshot checkpoint per finished match for all 48 teams
+5. writes one `match_results.csv` row per team per finished match
+6. keeps the CSV contract stable so the Dash pages continue to load unchanged
 
-This is more than a simple HTML scrape: the script works from machine-readable TSV/text feeds and reconstructs historical daily states so the bump chart can show meaningful movement across tournament days rather than only the latest table.
+The ranking model freezes non-World-Cup teams at their 11 June ratings, so every checkpoint shows how the tournament itself moved the qualified teams relative to that starting world table.
 
 ### Automated refresh
 
@@ -218,7 +212,7 @@ GitHub Actions runs [.github/workflows/scrape-elo-predictions.yml](/Users/deepa.
 The workflow:
 
 1. installs dependencies
-2. runs `python scraper.py`
+2. runs `python calculate_elo.py`
 3. commits `elo_snapshots.csv` and `match_results.csv` only if they changed
 
 ### Runtime behavior inside the Dash app
@@ -263,7 +257,7 @@ Prediction pages also use a 15-minute `dcc.Interval` so already-open tabs can re
 │   └── predictions/
 │       ├── elo_ratings.py
 │       └── group_ratings.py
-├── scraper.py                     # Elo snapshot/result ingestion job
+├── calculate_elo.py               # Elo snapshot/result calculation job
 ├── elo_snapshots.csv              # persisted rating snapshots
 ├── match_results.csv              # persisted World Cup Elo result rows
 └── requirements.txt
@@ -309,15 +303,15 @@ export PLOTLY_FIFA_PREDICTIONS_TIMEOUT_SECONDS="10"
 python3 app.py
 ```
 
-## Running The Elo Scraper Locally
+## Running The Elo Calculator Locally
 
 To refresh the prediction CSVs on your machine:
 
 ```bash
-python3 scraper.py
+python3 calculate_elo.py
 ```
 
-The scraper forces `PLOTLY_FIFA_PREDICTIONS_SOURCE=local` for its own run so it always writes against local CSV files rather than round-tripping through the GitHub-hosted copies.
+The Elo calculator forces `PLOTLY_FIFA_PREDICTIONS_SOURCE=local` for its own run so it always writes against local CSV files rather than round-tripping through the GitHub-hosted copies.
 
 ## Important Notes
 
@@ -325,4 +319,3 @@ The scraper forces `PLOTLY_FIFA_PREDICTIONS_SOURCE=local` for its own run so it 
 - Match lineups, goals, cards, and substitutions depend on your football-data plan supporting unfolded match detail.
 - This repository does not currently include automated tests.
 - The current README is intentionally aligned to the shipped code, not to aspirational future forecast pages.
-
