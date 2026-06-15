@@ -1,11 +1,16 @@
 from __future__ import annotations
 
+import logging
 import os
 import re
+import tempfile
+import time
 from collections import defaultdict
 
 import pandas as pd
 import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
 os.environ.setdefault("PLOTLY_FIFA_PREDICTIONS_SOURCE", "local")
 
@@ -25,7 +30,13 @@ from data.predictions import (
 )
 
 BASE_URL = "https://www.eloratings.net"
-TIMEOUT_SECONDS = 30
+CONNECT_TIMEOUT_SECONDS = 10
+READ_TIMEOUT_SECONDS = 30
+REQUEST_RETRY_TOTAL = 4
+REQUEST_RETRY_BACKOFF_FACTOR = 1.5
+REQUEST_RETRY_STATUS_CODES = (429, 500, 502, 503, 504)
+SCRAPE_MAX_ATTEMPTS = 3
+SCRAPE_RETRY_BACKOFF_BASE_SECONDS = 5
 USER_AGENT = "plotly-fifa-predictions-scraper/1.0"
 TEAM_NAMES_PATH = "en.teams.tsv"
 TOURNAMENT_NAMES_PATH = "en.tournaments.tsv"
@@ -39,21 +50,48 @@ GRAPH_DAY_RE = re.compile(r"^(\d{2})(.*)$")
 GRAPH_MATCH_RE = re.compile(r"^([A-Z][A-Z])([A-Z][A-Z])(-?\d+)(.*)$")
 GRAPH_TEAMS_RE = re.compile(r"^([A-Z][A-Z])([A-Z][A-Z])(.*)$")
 GRAPH_TEAM_RE = re.compile(r"^([A-Z][A-Z])(-?\d+)(.*)$")
+LOGGER = logging.getLogger(__name__)
 
 
-def _fetch_tsv(session: requests.Session, path: str) -> pd.DataFrame:
-    payload = _fetch_text(session, path)
+def _build_session() -> requests.Session:
+    retry_strategy = Retry(
+        total=REQUEST_RETRY_TOTAL,
+        connect=REQUEST_RETRY_TOTAL,
+        read=REQUEST_RETRY_TOTAL,
+        status=REQUEST_RETRY_TOTAL,
+        allowed_methods=frozenset({"GET"}),
+        backoff_factor=REQUEST_RETRY_BACKOFF_FACTOR,
+        status_forcelist=REQUEST_RETRY_STATUS_CODES,
+        respect_retry_after_header=True,
+        raise_on_status=False,
+    )
+    adapter = HTTPAdapter(max_retries=retry_strategy)
+    session = requests.Session()
+    session.headers.update({"User-Agent": USER_AGENT})
+    session.mount("https://", adapter)
+    session.mount("http://", adapter)
+    return session
+
+
+def _fetch_tsv(session: requests.Session, path: str, *, allow_empty: bool = False) -> pd.DataFrame:
+    payload = _fetch_text(session, path, allow_empty=allow_empty)
     if not payload:
         return pd.DataFrame()
     rows = [line.split("\t") for line in payload.splitlines() if line.strip()]
     return pd.DataFrame(rows)
 
 
-def _fetch_text(session: requests.Session, path: str) -> str:
-    response = session.get(f"{BASE_URL}/{path}", timeout=TIMEOUT_SECONDS)
+def _fetch_text(session: requests.Session, path: str, *, allow_empty: bool = False) -> str:
+    response = session.get(
+        f"{BASE_URL}/{path}",
+        timeout=(CONNECT_TIMEOUT_SECONDS, READ_TIMEOUT_SECONDS),
+    )
     response.raise_for_status()
     response.encoding = "utf-8"
-    return response.text.strip()
+    payload = response.text.strip()
+    if payload or allow_empty:
+        return payload
+    raise ValueError(f"{path} returned an empty response.")
 
 
 def _parse_signed_int(value: str | int | float | None) -> int:
@@ -77,6 +115,30 @@ def _build_lookup(frame: pd.DataFrame) -> dict[str, str]:
 
 def _current_timestamp() -> pd.Timestamp:
     return pd.Timestamp.now(tz="UTC").floor("s")
+
+
+def _retry_sleep_seconds(attempt_number: int) -> int:
+    return SCRAPE_RETRY_BACKOFF_BASE_SECONDS * (2 ** max(attempt_number - 1, 0))
+
+
+def _write_csv_atomically(frame: pd.DataFrame, path) -> None:
+    temp_name: str | None = None
+    try:
+        with tempfile.NamedTemporaryFile(
+            "w",
+            encoding="utf-8",
+            newline="",
+            delete=False,
+            dir=str(path.parent),
+            prefix=f".{path.stem}-",
+            suffix=".tmp",
+        ) as temp_file:
+            temp_name = temp_file.name
+            frame.to_csv(temp_file, index=False)
+        os.replace(temp_name, path)
+    finally:
+        if temp_name and os.path.exists(temp_name):
+            os.remove(temp_name)
 
 
 def _should_skip_scrape(min_interval_minutes: int) -> tuple[bool, pd.Timestamp | None]:
@@ -280,6 +342,22 @@ def _build_backfill_elo_snapshots(
     return pd.DataFrame(rows, columns=ELO_SNAPSHOT_COLUMNS)
 
 
+def _safe_backfill_elo_snapshots(
+    ratings_frame: pd.DataFrame,
+    graph_payload: str,
+    team_lookup: dict[str, str],
+) -> pd.DataFrame:
+    if not graph_payload:
+        LOGGER.warning("graph.tsv was empty; skipping historical Elo backfill for this run.")
+        return pd.DataFrame(columns=ELO_SNAPSHOT_COLUMNS)
+
+    try:
+        return _build_backfill_elo_snapshots(ratings_frame, graph_payload, team_lookup)
+    except ValueError as exc:
+        LOGGER.warning("Skipping historical Elo backfill for this run after parse issue: %s", exc)
+        return pd.DataFrame(columns=ELO_SNAPSHOT_COLUMNS)
+
+
 def _existing_match_keys() -> set[str]:
     ensure_prediction_csvs()
     existing = _prune_match_results_file()
@@ -298,7 +376,7 @@ def _prune_match_results_file() -> pd.DataFrame:
     existing = pd.read_csv(MATCH_RESULTS_PATH)
     if existing.empty:
         empty = pd.DataFrame(columns=MATCH_RESULT_COLUMNS)
-        empty.to_csv(MATCH_RESULTS_PATH, index=False)
+        _write_csv_atomically(empty, MATCH_RESULTS_PATH)
         return empty
 
     for column in MATCH_RESULT_COLUMNS:
@@ -320,11 +398,11 @@ def _prune_match_results_file() -> pd.DataFrame:
     existing = existing.sort_values(["match_date", "team", "opponent"])
     if existing.empty:
         empty = pd.DataFrame(columns=MATCH_RESULT_COLUMNS)
-        empty.to_csv(MATCH_RESULTS_PATH, index=False)
+        _write_csv_atomically(empty, MATCH_RESULTS_PATH)
         return empty
 
     existing["match_date"] = existing["match_date"].dt.strftime("%Y-%m-%d")
-    existing.to_csv(MATCH_RESULTS_PATH, index=False)
+    _write_csv_atomically(existing, MATCH_RESULTS_PATH)
     return existing
 
 
@@ -333,7 +411,7 @@ def _prune_elo_snapshots_file() -> pd.DataFrame:
     existing = pd.read_csv(ELO_SNAPSHOTS_PATH)
     if existing.empty:
         empty = pd.DataFrame(columns=ELO_SNAPSHOT_COLUMNS)
-        empty.to_csv(ELO_SNAPSHOTS_PATH, index=False)
+        _write_csv_atomically(empty, ELO_SNAPSHOTS_PATH)
         return empty
 
     for column in ELO_SNAPSHOT_COLUMNS:
@@ -350,14 +428,14 @@ def _prune_elo_snapshots_file() -> pd.DataFrame:
     existing = existing.sort_values(["scraped_at", "rank", "team"])
     if existing.empty:
         empty = pd.DataFrame(columns=ELO_SNAPSHOT_COLUMNS)
-        empty.to_csv(ELO_SNAPSHOTS_PATH, index=False)
+        _write_csv_atomically(empty, ELO_SNAPSHOTS_PATH)
         return empty
 
     existing["scraped_at"] = existing["scraped_at"].dt.strftime("%Y-%m-%dT%H:%M:%S%z")
     existing["scraped_at"] = existing["scraped_at"].str.replace(r"(\+0000)$", "+00:00", regex=True)
     existing["rank"] = existing["rank"].astype(int)
     existing["elo_rating"] = existing["elo_rating"].astype(int)
-    existing.to_csv(ELO_SNAPSHOTS_PATH, index=False)
+    _write_csv_atomically(existing, ELO_SNAPSHOTS_PATH)
     return existing
 
 
@@ -487,7 +565,17 @@ def _scrape_match_results(
     return pd.DataFrame(rows, columns=MATCH_RESULT_COLUMNS)
 
 
-def run_scrape(*, force: bool = False, min_interval_minutes: int = 30) -> dict[str, object]:
+def _existing_predictions_are_usable() -> bool:
+    try:
+        snapshots = _prune_elo_snapshots_file()
+        _prune_match_results_file()
+    except Exception:
+        LOGGER.exception("Existing prediction CSVs could not be validated.")
+        return False
+    return not snapshots.empty
+
+
+def _run_scrape_once(*, force: bool = False, min_interval_minutes: int = 30) -> dict[str, object]:
     ensure_prediction_csvs()
     should_skip, latest_scrape = _should_skip_scrape(min_interval_minutes)
     if should_skip and not force:
@@ -504,13 +592,12 @@ def run_scrape(*, force: bool = False, min_interval_minutes: int = 30) -> dict[s
             "new_matches": 0,
         }
 
-    with requests.Session() as session:
-        session.headers.update({"User-Agent": USER_AGENT})
+    with _build_session() as session:
         team_names = _fetch_tsv(session, TEAM_NAMES_PATH)
         tournament_names = _fetch_tsv(session, TOURNAMENT_NAMES_PATH)
         ratings = _fetch_tsv(session, WORLD_RATINGS_PATH)
-        latest_results = _fetch_tsv(session, LATEST_RESULTS_PATH)
-        graph_payload = _fetch_text(session, GRAPH_PATH)
+        latest_results = _fetch_tsv(session, LATEST_RESULTS_PATH, allow_empty=True)
+        graph_payload = _fetch_text(session, GRAPH_PATH, allow_empty=True)
 
     team_lookup = _build_lookup(team_names)
     tournament_lookup = _build_lookup(tournament_names)
@@ -518,7 +605,7 @@ def run_scrape(*, force: bool = False, min_interval_minutes: int = 30) -> dict[s
     scraped_at_ts = _current_timestamp()
     scraped_at = scraped_at_ts.isoformat()
 
-    backfill_snapshot_rows = _build_backfill_elo_snapshots(ratings, graph_payload, team_lookup)
+    backfill_snapshot_rows = _safe_backfill_elo_snapshots(ratings, graph_payload, team_lookup)
     current_snapshot_rows = _scrape_elo_snapshots(ratings, team_lookup, scraped_at)
     new_match_rows = _scrape_match_results(latest_results, team_lookup, tournament_lookup, existing_match_keys)
 
@@ -531,14 +618,14 @@ def run_scrape(*, force: bool = False, min_interval_minutes: int = 30) -> dict[s
     snapshot_export = pd.concat([existing_snapshots, backfill_snapshot_rows, snapshot_rows], ignore_index=True)
     snapshot_export = snapshot_export.drop_duplicates(subset=["scraped_at", "team"], keep="last")
     snapshot_export = snapshot_export.sort_values(["scraped_at", "rank", "team"])
-    snapshot_export.to_csv(ELO_SNAPSHOTS_PATH, index=False)
+    _write_csv_atomically(snapshot_export, ELO_SNAPSHOTS_PATH)
 
     existing_results = _prune_match_results_file()
     if not new_match_rows.empty:
         results_export = pd.concat([existing_results, new_match_rows], ignore_index=True)
     else:
         results_export = existing_results
-    results_export.to_csv(MATCH_RESULTS_PATH, index=False)
+    _write_csv_atomically(results_export, MATCH_RESULTS_PATH)
 
     new_match_count = (
         new_match_rows.apply(
@@ -563,5 +650,41 @@ def run_scrape(*, force: bool = False, min_interval_minutes: int = 30) -> dict[s
     }
 
 
+def run_scrape(*, force: bool = False, min_interval_minutes: int = 30) -> dict[str, object]:
+    last_error: Exception | None = None
+    for attempt in range(1, SCRAPE_MAX_ATTEMPTS + 1):
+        try:
+            return _run_scrape_once(force=force, min_interval_minutes=min_interval_minutes)
+        except Exception as exc:
+            last_error = exc
+            LOGGER.warning("Predictions scrape attempt %s/%s failed: %s", attempt, SCRAPE_MAX_ATTEMPTS, exc)
+            if attempt < SCRAPE_MAX_ATTEMPTS:
+                sleep_seconds = _retry_sleep_seconds(attempt)
+                LOGGER.info("Retrying predictions scrape in %s seconds.", sleep_seconds)
+                time.sleep(sleep_seconds)
+                continue
+
+            if _existing_predictions_are_usable():
+                degraded_at = _current_timestamp().isoformat()
+                print(
+                    f"[{degraded_at}] Predictions scrape degraded | "
+                    f"using previously committed CSVs after {SCRAPE_MAX_ATTEMPTS} failed attempts: {exc}"
+                )
+                return {
+                    "status": "degraded",
+                    "scraped_at": degraded_at,
+                    "ratings_appended": 0,
+                    "match_rows_appended": 0,
+                    "new_matches": 0,
+                }
+            raise
+
+    raise RuntimeError("Predictions scrape failed without raising a terminal error.") from last_error
+
+
 if __name__ == "__main__":
+    logging.basicConfig(
+        level=os.environ.get("PLOTLY_FIFA_LOG_LEVEL", "INFO").upper(),
+        format="%(asctime)s %(levelname)s %(message)s",
+    )
     run_scrape(force=True)
