@@ -15,6 +15,7 @@ from data.predictions import (
     TEAM_TO_CONFEDERATION,
     WORLD_CUP_RESULTS_START_DATE,
     load_elo_snapshots,
+    load_match_results,
 )
 
 register_page(__name__, path="/predictions/elo-ratings", name="Overall Rankings")
@@ -62,13 +63,12 @@ def _legend_badges():
     return dmc.Group(items, gap="xs", wrap="wrap")
 
 
-def _daily_snapshots(snapshots):
+def _daily_snapshots(snapshots, match_results=None):
     frame = snapshots.copy()
-    frame["snapshot_day"] = frame["scraped_at"].dt.tz_localize(None).dt.normalize()
     frame = frame.sort_values(["team", "scraped_at"])
-    frame = frame.groupby(["team", "snapshot_day"], as_index=False).last()
+    frame = frame.groupby(["team", "scraped_at"], as_index=False).last()
     frame["team_order"] = frame["team"].map(TEAM_DISPLAY_ORDER)
-    signature_frame = frame.sort_values(["snapshot_day", "team_order"]).copy()
+    signature_frame = frame.sort_values(["scraped_at", "team_order"]).copy()
     signature_frame["signature"] = (
         signature_frame["team"]
         + "|"
@@ -76,18 +76,53 @@ def _daily_snapshots(snapshots):
         + "|"
         + signature_frame["elo_rating"].astype(str)
     )
-    day_signatures = signature_frame.groupby("snapshot_day")["signature"].agg("||".join)
+    checkpoint_signatures = signature_frame.groupby("scraped_at")["signature"].agg("||".join)
+    distinct_checkpoints = checkpoint_signatures[checkpoint_signatures.ne(checkpoint_signatures.shift())].index
+    frame = frame[frame["scraped_at"].isin(distinct_checkpoints)].copy()
+    frame = frame.drop(columns=["team_order"])
+    checkpoint_meta = frame[["scraped_at"]].drop_duplicates().sort_values("scraped_at").reset_index(drop=True)
+    checkpoint_meta["snapshot_day"] = checkpoint_meta["scraped_at"].dt.tz_localize(None).dt.normalize()
+    if match_results is not None and not match_results.empty and len(checkpoint_meta) > 1:
+        baseline_day = checkpoint_meta.loc[0, "snapshot_day"]
+        unique_matches = (
+            match_results[match_results["match_date"] > baseline_day].copy()
+            .assign(
+                match_key=lambda value: value.apply(
+                    lambda row: f"{row['match_date'].strftime('%Y-%m-%d')}|{'::'.join(sorted([row['team'], row['opponent']]))}",
+                    axis=1,
+                )
+            )
+            .drop_duplicates(subset=["match_key"], keep="first")
+            .sort_values(["match_date", "team", "opponent"])
+        )
+        local_match_days = list(unique_matches["match_date"].dt.normalize())
+        expected_checkpoints = len(checkpoint_meta) - 1
+        if len(local_match_days) >= expected_checkpoints:
+            checkpoint_meta.loc[1:, "snapshot_day"] = local_match_days[:expected_checkpoints]
+    checkpoint_meta["day_number"] = (checkpoint_meta["snapshot_day"] - WORLD_CUP_RESULTS_START_DATE).dt.days + 1
+    checkpoint_meta["day_label"] = checkpoint_meta["day_number"].map(lambda value: f"Day {int(value)}")
+    checkpoint_meta["date_label"] = checkpoint_meta["snapshot_day"].dt.strftime("%d %b %Y")
+    frame = frame.merge(checkpoint_meta, on="scraped_at", how="left")
+    frame = frame.sort_values(["team", "scraped_at"])
+    frame = frame.groupby(["team", "snapshot_day"], as_index=False).last()
+    frame["team_order"] = frame["team"].map(TEAM_DISPLAY_ORDER)
+    daily_signature_frame = frame.sort_values(["snapshot_day", "team_order"]).copy()
+    daily_signature_frame["signature"] = (
+        daily_signature_frame["team"]
+        + "|"
+        + daily_signature_frame["rank"].astype(str)
+        + "|"
+        + daily_signature_frame["elo_rating"].astype(str)
+    )
+    day_signatures = daily_signature_frame.groupby("snapshot_day")["signature"].agg("||".join)
     distinct_days = day_signatures[day_signatures.ne(day_signatures.shift())].index
     frame = frame[frame["snapshot_day"].isin(distinct_days)].copy()
     frame = frame.drop(columns=["team_order"])
-    frame["day_number"] = (frame["snapshot_day"] - WORLD_CUP_RESULTS_START_DATE).dt.days + 1
-    frame["day_label"] = frame["day_number"].map(lambda value: f"Day {int(value)}")
-    frame["date_label"] = frame["snapshot_day"].dt.strftime("%d %b %Y")
     return frame
 
 
-def _nivo_bump_data(snapshots):
-    frame = _daily_snapshots(snapshots)
+def _nivo_bump_data(snapshots, match_results=None):
+    frame = _daily_snapshots(snapshots, match_results=match_results)
     frame["elo_delta"] = frame.groupby("team")["elo_rating"].diff()
     frame["rank_delta"] = frame.groupby("team")["rank"].diff()
     series = []
@@ -164,7 +199,7 @@ def layout(**_kwargs):
                                         [
                                             dmc.Text("RANK TREND", className="section-label", size="1rem"),
                                             dmc.Text(
-                                                "The chart tracks how each team's global ranking shifts as the tournament progresses. Higher-ranked teams are statistically stronger opponents, but Elo is a probability indicator — not a guarantee. Watch the lines over time rather than a single snapshot to get a clearer picture of which teams are genuinely building momentum. Lines are colored by confederation.",
+                                                "The chart tracks how each team's global ranking shifts across tournament days. Higher-ranked teams are statistically stronger opponents, but Elo is a probability indicator — not a guarantee. Watch the day-by-day trend rather than a single snapshot to get a clearer picture of which teams are genuinely building momentum. Lines are colored by confederation.",
                                                 c="#7A8099",
                                             ),
                                         ],
@@ -196,18 +231,19 @@ def layout(**_kwargs):
 )
 def render_elo_ratings(_: int):
     snapshots = load_elo_snapshots()
+    match_results = load_match_results()
     unique_scrapes = snapshots["scraped_at"].nunique() if not snapshots.empty else 0
-    plotted_daily_snapshots = _daily_snapshots(snapshots) if not snapshots.empty else snapshots
+    plotted_daily_snapshots = _daily_snapshots(snapshots, match_results=match_results) if not snapshots.empty else snapshots
     unique_days = plotted_daily_snapshots["snapshot_day"].nunique() if not plotted_daily_snapshots.empty else 0
 
     if unique_days < 2:
         return (
             _placeholder(
                 "This view needs snapshots from at least two tournament days before the day-by-day movement becomes meaningful. "
-                "The scheduler will fill this in automatically as new daily snapshots land."
+                "The scheduler will fill this in automatically as new daily states land."
             ),
             dmc.Text(
-                f"{unique_scrapes} snapshots across {unique_days} tournament day"
+                f"{unique_scrapes} raw snapshots across {unique_days} tournament day"
                 f"{'' if unique_days == 1 else 's'}",
                 c="#7A8099",
             ),
@@ -218,7 +254,7 @@ def render_elo_ratings(_: int):
     meta = dmc.Group(
         [
             dmc.Badge(f"{len(TARGET_TEAMS)} teams", variant="light", color="gray"),
-            dmc.Badge(f"{unique_days} tournament days", variant="light", color="gray"),
+            dmc.Badge(f"{unique_days} tournament day{'' if unique_days == 1 else 's'}", variant="light", color="gray"),
             dmc.Badge(
                 ["Last refreshed: ", render_local_time(latest_scrape.isoformat(), format_style="datetime")],
                 variant="light",
@@ -229,7 +265,7 @@ def render_elo_ratings(_: int):
         gap="xs",
         wrap="wrap",
     )
-    bump_data, axis_bottom = _nivo_bump_data(snapshots)
+    bump_data, axis_bottom = _nivo_bump_data(snapshots, match_results=match_results)
     chart = html.Div(
         dn.AreaBump(
             id="elo-nivo-bump-chart",
