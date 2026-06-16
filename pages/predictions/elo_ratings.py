@@ -199,7 +199,7 @@ def layout(**_kwargs):
                                         [
                                             dmc.Text("RANK TREND", className="section-label", size="1rem"),
                                             dmc.Text(
-                                                "The chart tracks how each team's global ranking shifts across tournament days. Higher-ranked teams are statistically stronger opponents, but Elo is a probability indicator — not a guarantee. Watch the day-by-day trend rather than a single snapshot to get a clearer picture of which teams are genuinely building momentum. Lines are colored by confederation.",
+                                                "The chart tracks how each team's global ranking shifts across tournament days. Higher-ranked teams are statistically stronger opponents, but Elo is a probability indicator — not a guarantee. Watch the day-by-day trend rather than a single snapshot to get a clearer picture of which teams are genuinely building momentum. Lines are colored by confederation. This chart prioritizes relative order among the 48 tracked teams; hence, a small global-rank gain or drop can still appear flat if a team does not overtake another team.",
                                                 c="#7A8099",
                                             ),
                                         ],
