@@ -14,7 +14,7 @@ from urllib3.util.retry import Retry
 
 os.environ.setdefault("PLOTLY_FIFA_PREDICTIONS_SOURCE", "local")
 
-from data.api import API_KEY, WC_CODE, WC_SEASON, get_completed_matches
+from data.api import API_KEY, WC_CODE, WC_SEASON
 from data.predictions import (
     ELO_SNAPSHOT_COLUMNS,
     ELO_SNAPSHOTS_PATH,
@@ -211,19 +211,20 @@ def _fetch_completed_world_cup_matches() -> list[dict]:
     if not API_KEY:
         raise ValueError("FOOTBALL_DATA_API_KEY is required for the Elo refresh job.")
 
-    try:
-        with _build_session() as session:
-            response = session.get(
-                f"{FOOTBALL_DATA_BASE_URL}/competitions/{WC_CODE}/matches",
-                params={"season": WC_SEASON},
-                timeout=(CONNECT_TIMEOUT_SECONDS, READ_TIMEOUT_SECONDS),
-            )
-            response.raise_for_status()
-            payload = response.json()
-            matches = payload.get("matches", [])
-    except Exception as exc:
-        LOGGER.warning("Live football-data fetch failed, falling back to cached completed matches: %s", exc)
-        matches = get_completed_matches()
+    with _build_session() as session:
+        response = session.get(
+            f"{FOOTBALL_DATA_BASE_URL}/competitions/{WC_CODE}/matches",
+            params={"season": WC_SEASON},
+            timeout=(CONNECT_TIMEOUT_SECONDS, READ_TIMEOUT_SECONDS),
+        )
+        response.raise_for_status()
+        payload = response.json()
+        matches = payload.get("matches", [])
+
+    if not matches:
+        raise ValueError(
+            f"football-data.org returned no World Cup match data for {WC_CODE} {WC_SEASON}; refusing to reuse stale CSVs."
+        )
 
     completed = []
     for match in matches:
@@ -232,6 +233,11 @@ def _fetch_completed_world_cup_matches() -> list[dict]:
         if _coerce_timestamp(match.get("utcDate")) is None:
             continue
         completed.append(match)
+
+    if not completed:
+        raise ValueError(
+            f"football-data.org returned World Cup data for {WC_CODE} {WC_SEASON}, but no completed matches were available."
+        )
 
     completed.sort(
         key=lambda match: (
@@ -491,14 +497,6 @@ def _export_match_results(frame: pd.DataFrame) -> pd.DataFrame:
     return export.loc[:, MATCH_RESULT_COLUMNS]
 
 
-def _existing_predictions_are_usable() -> bool:
-    try:
-        return not load_elo_snapshots().empty
-    except Exception:
-        LOGGER.exception("Existing prediction CSVs could not be validated.")
-        return False
-
-
 def _run_scrape_once(*, force: bool = False, min_interval_minutes: int = 30) -> dict[str, object]:
     del force, min_interval_minutes
 
@@ -575,20 +573,6 @@ def run_scrape(*, force: bool = False, min_interval_minutes: int = 30) -> dict[s
                 LOGGER.info("Retrying predictions refresh in %s seconds.", sleep_seconds)
                 time.sleep(sleep_seconds)
                 continue
-
-            if _existing_predictions_are_usable():
-                degraded_at = _current_timestamp().isoformat()
-                print(
-                    f"[{degraded_at}] Predictions refresh degraded | "
-                    f"using previously committed CSVs after {SCRAPE_MAX_ATTEMPTS} failed attempts: {exc}"
-                )
-                return {
-                    "status": "degraded",
-                    "scraped_at": degraded_at,
-                    "ratings_appended": 0,
-                    "match_rows_appended": 0,
-                    "new_matches": 0,
-                }
             raise
 
     raise RuntimeError("Predictions refresh failed without raising a terminal error.") from last_error
