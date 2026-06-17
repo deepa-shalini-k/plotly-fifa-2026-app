@@ -39,5 +39,7 @@ match_date,team,opponent,team_score,opponent_score,tournament,elo_change,new_elo
 2026-06-16,Jordan,Austria,1,3,World Cup,-27,1653,-2,54,J
 2026-06-16,Norway,Iraq,4,1,World Cup,15,1929,0,10,I
 2026-06-16,Senegal,France,1,3,World Cup,-21,1839,-2,22,I
+2026-06-17,Croatia,England,2,4,World Cup,-31,1881,-2,13,L
 2026-06-17,DR Congo,Portugal,1,1,World Cup,22,1674,3,52,K
+2026-06-17,England,Croatia,4,2,World Cup,31,2055,0,4,L
 2026-06-17,Portugal,DR Congo,1,1,World Cup,-22,1967,-2,7,K
