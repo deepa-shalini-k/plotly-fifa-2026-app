@@ -543,10 +543,10 @@ def _normalize_player_entry(player: dict | None, team: dict | None = None) -> di
     elif isinstance(normalized.get("currentTeam"), dict):
         normalized["currentTeam"] = _normalize_team(normalized["currentTeam"])
 
-    normalized["flag_emoji"] = _resolve_flag_emoji(
-        normalized.get("currentTeam")
-        or normalized.get("nationality")
+    normalized["flag_emoji"] = normalized.get("flag_emoji") or _resolve_flag_emoji(
+        normalized.get("nationality")
         or normalized.get("country")
+        or normalized.get("currentTeam")
     )
     return normalized
 
@@ -557,11 +557,12 @@ def _normalize_team(team: dict | None) -> dict:
 
     normalized = dict(team)
     normalized["flag_emoji"] = _resolve_flag_emoji(normalized)
-    normalized.setdefault("shortName", normalized.get("name", "Unknown"))
-    normalized.setdefault("tla", normalized.get("shortName", "UNK")[:3].upper())
-    normalized.setdefault("lineup", [])
-    normalized.setdefault("bench", [])
-    normalized.setdefault("statistics", {})
+    normalized["name"] = str(normalized.get("name") or normalized.get("shortName") or "TBD")
+    normalized["shortName"] = str(normalized.get("shortName") or normalized["name"] or "TBD")
+    normalized["tla"] = str(normalized.get("tla") or normalized["shortName"][:3] or "TBD").upper()
+    normalized["lineup"] = normalized.get("lineup") if isinstance(normalized.get("lineup"), list) else []
+    normalized["bench"] = normalized.get("bench") if isinstance(normalized.get("bench"), list) else []
+    normalized["statistics"] = normalized.get("statistics") if isinstance(normalized.get("statistics"), dict) else {}
 
     if isinstance(normalized.get("area"), dict):
         normalized["area"] = dict(normalized["area"])
@@ -1405,6 +1406,23 @@ def get_completed_matches() -> list[dict]:
             if match.get("status") in COMPLETED_STATUSES
         ]
         return sorted(completed_matches, key=lambda match: match.get("utcDate", ""), reverse=True)
+    except Exception:
+        return []
+
+
+def get_all_matches() -> list[dict]:
+    if _demo_mode():
+        return _sort_matches([_normalize_match(match) for match in SAMPLE_MATCHES])
+    if not API_KEY:
+        return []
+    try:
+        matches = _request(f"/competitions/{WC_CODE}/matches", "historical").get("matches", [])
+        normalized_matches = [_normalize_match(match) for match in matches]
+        world_cup_matches = [match for match in normalized_matches if _is_world_cup_2026_match(match)]
+        return sorted(
+            world_cup_matches,
+            key=lambda match: (match.get("utcDate", ""), _coerce_int(match.get("id")) or 0),
+        )
     except Exception:
         return []
 
