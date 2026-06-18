@@ -42,4 +42,6 @@ match_date,team,opponent,team_score,opponent_score,tournament,elo_change,new_elo
 2026-06-17,Croatia,England,2,4,World Cup,-31,1881,-2,13,L
 2026-06-17,DR Congo,Portugal,1,1,World Cup,22,1674,3,52,K
 2026-06-17,England,Croatia,4,2,World Cup,31,2055,0,4,L
+2026-06-17,Ghana,Panama,1,0,World Cup,47,1557,8,73,L
+2026-06-17,Panama,Ghana,0,1,World Cup,-47,1683,-11,51,L
 2026-06-17,Portugal,DR Congo,1,1,World Cup,-22,1967,-2,7,K
