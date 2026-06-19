@@ -55,3 +55,5 @@ match_date,team,opponent,team_score,opponent_score,tournament,elo_change,new_elo
 2026-06-18,South Africa,Czechia,1,1,World Cup,16,1527,3,78,A
 2026-06-18,South Korea,Mexico,0,1,World Cup,-15,1771,-4,30,A
 2026-06-18,Switzerland,Bosnia and Herzegovina,4,1,World Cup,20,1885,6,13,B
+2026-06-19,Australia,USA,0,2,World Cup,-40,1799,-1,25,D
+2026-06-19,USA,Australia,2,0,World Cup,40,1820,3,24,D
