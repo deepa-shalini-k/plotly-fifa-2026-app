@@ -50,6 +50,8 @@ match_date,team,opponent,team_score,opponent_score,tournament,elo_change,new_elo
 2026-06-18,Bosnia and Herzegovina,Switzerland,1,4,World Cup,-20,1596,-5,65,B
 2026-06-18,Canada,Qatar,6,0,World Cup,10,1777,0,30,B
 2026-06-18,Czechia,South Africa,1,1,World Cup,-16,1696,-6,48,A
+2026-06-18,Mexico,South Korea,1,0,World Cup,15,1896,3,12,A
 2026-06-18,Qatar,Canada,0,6,World Cup,-10,1437,-1,91,B
 2026-06-18,South Africa,Czechia,1,1,World Cup,16,1527,3,78,A
+2026-06-18,South Korea,Mexico,0,1,World Cup,-15,1771,-4,30,A
 2026-06-18,Switzerland,Bosnia and Herzegovina,4,1,World Cup,20,1885,6,13,B
