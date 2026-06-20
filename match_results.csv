@@ -56,6 +56,10 @@ match_date,team,opponent,team_score,opponent_score,tournament,elo_change,new_elo
 2026-06-18,South Korea,Mexico,0,1,World Cup,-15,1771,-4,30,A
 2026-06-18,Switzerland,Bosnia and Herzegovina,4,1,World Cup,20,1885,6,13,B
 2026-06-19,Australia,USA,0,2,World Cup,-40,1799,-1,25,D
+2026-06-19,Brazil,Haiti,3,0,World Cup,8,1986,0,6,C
+2026-06-19,Haiti,Brazil,0,3,World Cup,-8,1528,-1,77,C
 2026-06-19,Morocco,Scotland,1,0,World Cup,26,1866,2,20,C
+2026-06-19,Paraguay,Turkey,1,0,World Cup,36,1816,2,24,D
 2026-06-19,Scotland,Morocco,0,1,World Cup,-26,1768,-4,30,C
+2026-06-19,Turkey,Paraguay,0,1,World Cup,-36,1813,-3,25,D
 2026-06-19,USA,Australia,2,0,World Cup,40,1820,3,24,D
