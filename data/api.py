@@ -1399,7 +1399,7 @@ def get_completed_matches() -> list[dict]:
     if not API_KEY:
         return []
     try:
-        matches = _request(f"/competitions/{WC_CODE}/matches", "historical").get("matches", [])
+        matches = _request(f"/competitions/{WC_CODE}/matches", "competition", params={"season": WC_SEASON}).get("matches", [])
         completed_matches = [
             _normalize_match(match)
             for match in matches
@@ -1416,7 +1416,7 @@ def get_all_matches() -> list[dict]:
     if not API_KEY:
         return []
     try:
-        matches = _request(f"/competitions/{WC_CODE}/matches", "historical").get("matches", [])
+        matches = _request(f"/competitions/{WC_CODE}/matches", "competition", params={"season": WC_SEASON}).get("matches", [])
         normalized_matches = [_normalize_match(match) for match in matches]
         world_cup_matches = [match for match in normalized_matches if _is_world_cup_2026_match(match)]
         return sorted(
@@ -1479,7 +1479,7 @@ def get_default_match_id() -> int | None:
     return today_matches[0]["id"] if today_matches else None
 
 
-def get_match(match_id: int | str) -> dict:
+def get_match_detail(match_id: int | str, *, allow_known_fallback: bool = True) -> dict:
     if _demo_mode():
         resolved_id = _coerce_match_id(match_id)
         if resolved_id is not None:
@@ -1490,11 +1490,15 @@ def get_match(match_id: int | str) -> dict:
     if resolved_id is None:
         return {}
     if not API_KEY:
-        return _known_match(resolved_id)
+        return _known_match(resolved_id) if allow_known_fallback else {}
     try:
         return _normalize_match(_request(f"/matches/{resolved_id}", "live", unfold=True))
     except Exception:
-        return _known_match(resolved_id)
+        return _known_match(resolved_id) if allow_known_fallback else {}
+
+
+def get_match(match_id: int | str) -> dict:
+    return get_match_detail(match_id, allow_known_fallback=True)
 
 
 def get_live_hub_payload() -> dict:
@@ -1732,7 +1736,7 @@ def get_tournament_summary() -> dict:
     if not API_KEY:
         return _zero_tournament_summary()
     try:
-        matches = _request(f"/competitions/{WC_CODE}/matches", "historical").get("matches", [])
+        matches = _request(f"/competitions/{WC_CODE}/matches", "competition", params={"season": WC_SEASON}).get("matches", [])
         finished_matches = [match for match in matches if match.get("status") == "FINISHED"]
         total_goals = sum((match.get("score", {}).get("fullTime", {}).get("home") or 0) + (match.get("score", {}).get("fullTime", {}).get("away") or 0) for match in finished_matches)
         return {
@@ -1876,60 +1880,68 @@ def _completed_match_leaderboard_ids() -> tuple[int, ...]:
     return tuple(sorted(match_ids))
 
 
-@lru_cache(maxsize=8)
-def _completed_match_leaderboards(match_ids: tuple[int, ...]) -> dict[str, list[dict]]:
-    player_stats: dict[int, dict] = {}
-    team_lookup: dict[int, dict] = {}
-    clean_sheet_counts: defaultdict[int, int] = defaultdict(int)
+def _empty_completed_match_leaderboard_state() -> dict:
+    return {
+        "player_stats": {},
+        "team_lookup": {},
+        "clean_sheet_counts": defaultdict(int),
+    }
 
-    for match_id in match_ids:
-        match = get_match(match_id)
-        if not match:
+
+def _apply_completed_match_to_leaderboard_state(state: dict, match: dict) -> None:
+    player_stats: dict[int, dict] = state["player_stats"]
+    team_lookup: dict[int, dict] = state["team_lookup"]
+    clean_sheet_counts: defaultdict[int, int] = state["clean_sheet_counts"]
+
+    home_team = _normalize_team(match.get("homeTeam"))
+    away_team = _normalize_team(match.get("awayTeam"))
+    home_team_id = _coerce_int(home_team.get("id"))
+    away_team_id = _coerce_int(away_team.get("id"))
+    if home_team_id is not None:
+        team_lookup[home_team_id] = home_team
+    if away_team_id is not None:
+        team_lookup[away_team_id] = away_team
+
+    home_goals, away_goals = _resolve_match_score(match)
+    if away_goals == 0 and home_team_id is not None:
+        clean_sheet_counts[home_team_id] += 1
+    if home_goals == 0 and away_team_id is not None:
+        clean_sheet_counts[away_team_id] += 1
+
+    for booking in match.get("bookings", []) if isinstance(match.get("bookings"), list) else []:
+        metric_key = _disciplinary_metric_key(booking.get("card"))
+        if metric_key is None:
             continue
 
-        home_team = _normalize_team(match.get("homeTeam"))
-        away_team = _normalize_team(match.get("awayTeam"))
-        home_team_id = _coerce_int(home_team.get("id"))
-        away_team_id = _coerce_int(away_team.get("id"))
-        if home_team_id is not None:
-            team_lookup[home_team_id] = home_team
-        if away_team_id is not None:
-            team_lookup[away_team_id] = away_team
+        player = _normalize_player_entry(booking.get("player"))
+        team = _normalize_team(booking.get("team"))
+        player_id = _coerce_int(player.get("id"))
+        if player_id is None:
+            continue
 
-        home_goals, away_goals = _resolve_match_score(match)
-        if away_goals == 0 and home_team_id is not None:
-            clean_sheet_counts[home_team_id] += 1
-        if home_goals == 0 and away_team_id is not None:
-            clean_sheet_counts[away_team_id] += 1
+        row = player_stats.setdefault(
+            player_id,
+            {
+                "id": player_id,
+                "name": player.get("name", f"Player {player_id}"),
+                "flag_emoji": team.get("flag_emoji", player.get("flag_emoji", "🏳️")),
+                "team_name": team.get("name", player.get("nationality", "Unknown")),
+                "photo_target": player.get("name", f"Player {player_id}"),
+                "yellowCards": 0,
+                "redCards": 0,
+            },
+        )
+        row[metric_key] += 1
+        if row.get("flag_emoji") in {None, "", "🏳️"}:
+            row["flag_emoji"] = team.get("flag_emoji", "🏳️")
+        if row.get("team_name") in {None, "", "Unknown"} and team.get("name"):
+            row["team_name"] = team["name"]
 
-        for booking in match.get("bookings", []) if isinstance(match.get("bookings"), list) else []:
-            metric_key = _disciplinary_metric_key(booking.get("card"))
-            if metric_key is None:
-                continue
 
-            player = _normalize_player_entry(booking.get("player"))
-            team = _normalize_team(booking.get("team"))
-            player_id = _coerce_int(player.get("id"))
-            if player_id is None:
-                continue
-
-            row = player_stats.setdefault(
-                player_id,
-                {
-                    "id": player_id,
-                    "name": player.get("name", f"Player {player_id}"),
-                    "flag_emoji": team.get("flag_emoji", player.get("flag_emoji", "🏳️")),
-                    "team_name": team.get("name", player.get("nationality", "Unknown")),
-                    "photo_target": player.get("name", f"Player {player_id}"),
-                    "yellowCards": 0,
-                    "redCards": 0,
-                },
-            )
-            row[metric_key] += 1
-            if row.get("flag_emoji") in {None, "", "🏳️"}:
-                row["flag_emoji"] = team.get("flag_emoji", "🏳️")
-            if row.get("team_name") in {None, "", "Unknown"} and team.get("name"):
-                row["team_name"] = team["name"]
+def _materialize_completed_match_leaderboards(state: dict) -> dict[str, list[dict]]:
+    player_stats: dict[int, dict] = state["player_stats"]
+    team_lookup: dict[int, dict] = state["team_lookup"]
+    clean_sheet_counts: defaultdict[int, int] = state["clean_sheet_counts"]
 
     yellow_cards = [
         {
@@ -1981,6 +1993,76 @@ def _completed_match_leaderboards(match_ids: tuple[int, ...]) -> dict[str, list[
     }
 
 
+def _completed_match_leaderboard_state_from_rows(rows_by_metric: dict[str, list[dict]] | None) -> dict:
+    state = _empty_completed_match_leaderboard_state()
+    player_stats: dict[int, dict] = state["player_stats"]
+    team_lookup: dict[int, dict] = state["team_lookup"]
+    clean_sheet_counts: defaultdict[int, int] = state["clean_sheet_counts"]
+    metrics = rows_by_metric if isinstance(rows_by_metric, dict) else {}
+
+    for metric_name, stat_key in (("Yellow Cards", "yellowCards"), ("Red Cards", "redCards")):
+        metric_rows = metrics.get(metric_name, [])
+        if not isinstance(metric_rows, list):
+            continue
+        for row in metric_rows:
+            if not isinstance(row, dict):
+                continue
+            player_id = _coerce_int(row.get("id"))
+            if player_id is None:
+                continue
+            entry = player_stats.setdefault(
+                player_id,
+                {
+                    "id": player_id,
+                    "name": row.get("name", f"Player {player_id}"),
+                    "flag_emoji": row.get("flag_emoji", "🏳️"),
+                    "team_name": row.get("team_name", "Unknown"),
+                    "photo_target": row.get("photo_target", row.get("name", f"Player {player_id}")),
+                    "yellowCards": 0,
+                    "redCards": 0,
+                },
+            )
+            entry[stat_key] = max(entry[stat_key], _coerce_stat_number(row.get("value")))
+            if row.get("flag_emoji") not in {None, "", "🏳️"}:
+                entry["flag_emoji"] = row["flag_emoji"]
+            if row.get("team_name") not in {None, "", "Unknown"}:
+                entry["team_name"] = row["team_name"]
+
+    metric_rows = metrics.get("Clean Sheets", [])
+    if isinstance(metric_rows, list):
+        for row in metric_rows:
+            if not isinstance(row, dict):
+                continue
+            team_id = _coerce_int(row.get("id"))
+            if team_id is None:
+                continue
+            clean_sheet_count = _coerce_stat_number(row.get("value"))
+            if clean_sheet_count <= 0:
+                continue
+            team_name = row.get("name", f"Team {team_id}")
+            team_lookup[team_id] = {
+                "id": team_id,
+                "name": team_name,
+                "flag_emoji": row.get("flag_emoji", "🏳️"),
+            }
+            clean_sheet_counts[team_id] = clean_sheet_count
+
+    return state
+
+
+@lru_cache(maxsize=8)
+def _completed_match_leaderboards(match_ids: tuple[int, ...]) -> dict[str, list[dict]]:
+    state = _empty_completed_match_leaderboard_state()
+
+    for match_id in match_ids:
+        match = get_match_detail(match_id, allow_known_fallback=False)
+        if not match:
+            continue
+        _apply_completed_match_to_leaderboard_state(state, match)
+
+    return _materialize_completed_match_leaderboards(state)
+
+
 def get_leaderboard(metric: str) -> list[dict]:
     if metric in {"Goals", "Assists", "Goal Involvements"}:
         metric_key = {
@@ -2006,9 +2088,9 @@ def get_leaderboard(metric: str) -> list[dict]:
         return entries
 
     if metric in {"Yellow Cards", "Red Cards", "Clean Sheets"}:
-        completed_match_ids = _completed_match_leaderboard_ids()
-        if completed_match_ids:
-            return _completed_match_leaderboards(completed_match_ids).get(metric, [])
+        from data import leaderboard_snapshots
+
+        return leaderboard_snapshots.get_expensive_leaderboard(metric)
 
     if not _demo_mode():
         return []
