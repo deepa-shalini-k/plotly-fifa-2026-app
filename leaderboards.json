@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-06-21T20:19:32Z",
+  "generated_at": "2026-06-21T21:48:44Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -29,6 +29,7 @@
     537360,
     537363,
     537364,
+    537365,
     537369,
     537370,
     537371,
@@ -159,6 +160,24 @@
         "flag_emoji": "🇸🇦",
         "team_name": "Saudi Arabia",
         "photo_target": "Salem Al Dawsari"
+      },
+      {
+        "kind": "player",
+        "id": 3821,
+        "value": 1,
+        "name": "Saeid Ezatolahi",
+        "flag_emoji": "🇮🇷",
+        "team_name": "Iran",
+        "photo_target": "Saeid Ezatolahi"
+      },
+      {
+        "kind": "player",
+        "id": 3662,
+        "value": 1,
+        "name": "Romelu Lukaku",
+        "flag_emoji": "🇧🇪",
+        "team_name": "Belgium",
+        "photo_target": "Romelu Lukaku"
       },
       {
         "kind": "player",
@@ -875,6 +894,15 @@
       },
       {
         "kind": "player",
+        "id": 192677,
+        "value": 1,
+        "name": "Nathan Ngoy",
+        "flag_emoji": "🇧🇪",
+        "team_name": "Belgium",
+        "photo_target": "Nathan Ngoy"
+      },
+      {
+        "kind": "player",
         "id": 76861,
         "value": 1,
         "name": "Miguel Almirón",
@@ -985,6 +1013,15 @@
       },
       {
         "kind": "team",
+        "id": 840,
+        "value": 1,
+        "name": "Iran",
+        "flag_emoji": "🇮🇷",
+        "team_name": "Iran",
+        "photo_target": "Iran"
+      },
+      {
+        "kind": "team",
         "id": 763,
         "value": 1,
         "name": "Ghana",
@@ -1036,6 +1073,15 @@
         "flag_emoji": "🇧🇷",
         "team_name": "Brazil",
         "photo_target": "Brazil"
+      },
+      {
+        "kind": "team",
+        "id": 805,
+        "value": 1,
+        "name": "Belgium",
+        "flag_emoji": "🇧🇪",
+        "team_name": "Belgium",
+        "photo_target": "Belgium"
       },
       {
         "kind": "team",
