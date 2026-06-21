@@ -7,6 +7,7 @@ import re
 import time
 import unicodedata
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 import pandas as pd
 import requests
@@ -158,6 +159,38 @@ CONFEDERATION_COLORS = {
     "OFC": "#FB923C",
 }
 
+# The Elo refresh exports match rows by the host city's local calendar day, so
+# pages that line live fixtures up with persisted Elo rows need the same venue
+# mapping to avoid off-by-one-day mismatches around midnight UTC.
+VENUE_HOST_CONTEXT = (
+    ("new york new jersey stadium", ("USA", "America/New_York")),
+    ("san francisco bay area stadium", ("USA", "America/Los_Angeles")),
+    ("los angeles stadium", ("USA", "America/Los_Angeles")),
+    ("kansas city stadium", ("USA", "America/Chicago")),
+    ("philadelphia stadium", ("USA", "America/New_York")),
+    ("mexico city stadium", ("Mexico", "America/Mexico_City")),
+    ("guadalajara stadium", ("Mexico", "America/Mexico_City")),
+    ("monterrey stadium", ("Mexico", "America/Monterrey")),
+    ("vancouver stadium", ("Canada", "America/Vancouver")),
+    ("toronto stadium", ("Canada", "America/Toronto")),
+    ("metlife stadium", ("USA", "America/New_York")),
+    ("levi s stadium", ("USA", "America/Los_Angeles")),
+    ("lincoln financial field", ("USA", "America/New_York")),
+    ("mercedes benz stadium", ("USA", "America/New_York")),
+    ("hard rock stadium", ("USA", "America/New_York")),
+    ("gillette stadium", ("USA", "America/New_York")),
+    ("arrowhead stadium", ("USA", "America/Chicago")),
+    ("lumen field", ("USA", "America/Los_Angeles")),
+    ("at t stadium", ("USA", "America/Chicago")),
+    ("sofi stadium", ("USA", "America/Los_Angeles")),
+    ("bmo field", ("Canada", "America/Toronto")),
+    ("bc place", ("Canada", "America/Vancouver")),
+    ("nrg stadium", ("USA", "America/Chicago")),
+    ("azteca", ("Mexico", "America/Mexico_City")),
+    ("akron", ("Mexico", "America/Mexico_City")),
+    ("bbva", ("Mexico", "America/Monterrey")),
+)
+
 ELO_SNAPSHOT_COLUMNS = ["scraped_at", "team", "rank", "elo_rating"]
 MATCH_RESULT_COLUMNS = [
     "match_date",
@@ -244,6 +277,59 @@ def build_match_key(match_date: str, team: str, opponent: str) -> str:
         key=normalize_team_key,
     )
     return f"{match_date}|{'::'.join(ordered)}"
+
+
+def _coerce_utc_timestamp(value) -> pd.Timestamp | None:
+    timestamp = pd.to_datetime(value, utc=True, errors="coerce")
+    if pd.isna(timestamp):
+        return None
+    return timestamp
+
+
+def _normalize_venue_key(value: str | None) -> str:
+    if not value:
+        return ""
+    normalized = str(value).casefold()
+    normalized = normalized.replace("&", " and ").replace("'", " ")
+    return " ".join("".join(char if char.isalnum() else " " for char in normalized).split())
+
+
+def venue_context(venue: str | None) -> tuple[str | None, str | None]:
+    venue_key = _normalize_venue_key(venue)
+    if not venue_key:
+        return None, None
+
+    for keyword, context in VENUE_HOST_CONTEXT:
+        if keyword in venue_key:
+            return context
+    return None, None
+
+
+def match_local_date(match: dict | None) -> pd.Timestamp | None:
+    if not isinstance(match, dict):
+        return None
+
+    kickoff = _coerce_utc_timestamp(match.get("utcDate"))
+    if kickoff is None:
+        return None
+
+    _, timezone_name = venue_context(match.get("venue"))
+    if timezone_name:
+        kickoff = kickoff.tz_convert(ZoneInfo(timezone_name))
+    return kickoff.normalize().tz_localize(None)
+
+
+def build_match_key_from_match(match: dict | None) -> str | None:
+    if not isinstance(match, dict):
+        return None
+
+    local_match_date = match_local_date(match)
+    home_name = canonical_team_name((match.get("homeTeam") or {}).get("name"))
+    away_name = canonical_team_name((match.get("awayTeam") or {}).get("name"))
+    if local_match_date is None or not home_name or not away_name:
+        return None
+
+    return build_match_key(local_match_date.strftime("%Y-%m-%d"), home_name, away_name)
 
 
 def ensure_prediction_csvs() -> None:
