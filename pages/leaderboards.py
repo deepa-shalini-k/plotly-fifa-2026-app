@@ -166,6 +166,7 @@ def layout(**_kwargs):
     return dmc.Stack(
         [
             dcc.Location(id="leaderboard-nav"),
+            dcc.Interval(id="leaderboard-refresh-interval", interval=300_000, n_intervals=0),
             dmc.Group(
                 [
                     dmc.Text("Leaderboards", className="page-title"),
@@ -220,8 +221,9 @@ def layout(**_kwargs):
     Output("leaderboard-chart", "figure"),
     Output("leaderboard-podium", "children"),
     Input("leaderboard-metric", "value"),
+    Input("leaderboard-refresh-interval", "n_intervals"),
 )
-def render_leaderboard(metric: str):
+def render_leaderboard(metric: str, _: int):
     return _leaderboard_figure(metric), _podium_cards(metric)
 
 
