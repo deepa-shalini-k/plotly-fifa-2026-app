@@ -71,3 +71,5 @@ match_date,team,opponent,team_score,opponent_score,tournament,elo_change,new_elo
 2026-06-20,Netherlands,Sweden,5,1,World Cup,28,1972,1,7,F
 2026-06-20,Sweden,Netherlands,1,5,World Cup,-28,1727,-4,39,F
 2026-06-20,Tunisia,Japan,0,4,World Cup,-15,1570,-3,71,F
+2026-06-21,Saudi Arabia,Spain,0,4,World Cup,-5,1593,-1,65,H
+2026-06-21,Spain,Saudi Arabia,4,0,World Cup,5,2134,0,1,H

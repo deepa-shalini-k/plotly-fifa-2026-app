@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-06-21T17:07:44Z",
+  "generated_at": "2026-06-21T18:49:00Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -31,6 +31,7 @@
     537364,
     537369,
     537370,
+    537371,
     537391,
     537392,
     537397,
@@ -152,6 +153,15 @@
       },
       {
         "kind": "player",
+        "id": 3574,
+        "value": 1,
+        "name": "Salem Al Dawsari",
+        "flag_emoji": "🇸🇦",
+        "team_name": "Saudi Arabia",
+        "photo_target": "Salem Al Dawsari"
+      },
+      {
+        "kind": "player",
         "id": 1081,
         "value": 1,
         "name": "Roger Ibañez",
@@ -212,6 +222,15 @@
         "flag_emoji": "🇨🇭",
         "team_name": "Switzerland",
         "photo_target": "Nico Elvedi"
+      },
+      {
+        "kind": "player",
+        "id": 248783,
+        "value": 1,
+        "name": "Mohammed Kanno",
+        "flag_emoji": "🇸🇦",
+        "team_name": "Saudi Arabia",
+        "photo_target": "Mohammed Kanno"
       },
       {
         "kind": "player",
@@ -894,6 +913,15 @@
     "Clean Sheets": [
       {
         "kind": "team",
+        "id": 760,
+        "value": 2,
+        "name": "Spain",
+        "flag_emoji": "🇪🇸",
+        "team_name": "Spain",
+        "photo_target": "Spain"
+      },
+      {
+        "kind": "team",
         "id": 769,
         "value": 2,
         "name": "Mexico",
@@ -909,15 +937,6 @@
         "flag_emoji": "🇺🇸",
         "team_name": "United States",
         "photo_target": "United States"
-      },
-      {
-        "kind": "team",
-        "id": 760,
-        "value": 1,
-        "name": "Spain",
-        "flag_emoji": "🇪🇸",
-        "team_name": "Spain",
-        "photo_target": "Spain"
       },
       {
         "kind": "team",
