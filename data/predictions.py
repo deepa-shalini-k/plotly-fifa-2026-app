@@ -7,7 +7,7 @@ import re
 import time
 import unicodedata
 from pathlib import Path
-from zoneinfo import ZoneInfo
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 import pandas as pd
 import requests
@@ -315,7 +315,10 @@ def match_local_date(match: dict | None) -> pd.Timestamp | None:
 
     _, timezone_name = venue_context(match.get("venue"))
     if timezone_name:
-        kickoff = kickoff.tz_convert(ZoneInfo(timezone_name))
+        try:
+            kickoff = kickoff.tz_convert(ZoneInfo(timezone_name))
+        except ZoneInfoNotFoundError:
+            logger.warning("Timezone data unavailable for %s; falling back to UTC match date", timezone_name)
     return kickoff.normalize().tz_localize(None)
 
 
