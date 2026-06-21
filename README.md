@@ -73,6 +73,8 @@ This page uses a world map selector to jump across qualified nations. For the se
 
 This page rotates between metrics such as goals, assists, goal involvements, yellow cards, red cards, and clean sheets. Clicking a bar routes the user directly into the relevant player or team page.
 
+The goals-based views still read live scorer data, while the more expensive yellow-card, red-card, and clean-sheet metrics now use a persisted `leaderboards.json` snapshot with a live delta patch when newly completed matches exist beyond the latest committed snapshot.
+
 ### `Elo Intelligence`
 
 Two prediction pages sit under the Elo section of the nav:
@@ -202,18 +204,26 @@ It then:
 
 The ranking model freezes non-World-Cup teams at their 11 June ratings, so every checkpoint shows how the tournament itself moved the qualified teams relative to that starting world table.
 
+[build_leaderboards.py](/Users/deepa.shalini/Documents/GitHub/plotly_fifa/build_leaderboards.py:1) performs the same kind of precomputation for the expensive leaderboard metrics by:
+
+1. fetching the finished World Cup match list
+2. fetching unfolded detail for each completed match
+3. aggregating yellow cards, red cards, and clean sheets into `leaderboards.json`
+4. keeping the page fast by letting the Dash app read that snapshot instead of rebuilding the full card/clean-sheet state from scratch on each page load
+
 ### Automated refresh
 
-GitHub Actions runs [.github/workflows/scrape-elo-predictions.yml](/Users/deepa.shalini/Documents/GitHub/plotly_fifa/.github/workflows/scrape-elo-predictions.yml:1) on:
+GitHub Actions runs [.github/workflows/run-elo-calculations.yml](/Users/deepa.shalini/Documents/GitHub/plotly_fifa/.github/workflows/run-elo-calculations.yml:1) on:
 
 - manual dispatch
-- a 30-minute schedule (`7,37 * * * *`)
+- a 5-minute schedule (`7-59/5 * * * *`)
 
 The workflow:
 
 1. installs dependencies
 2. runs `python calculate_elo.py`
-3. commits `elo_snapshots.csv` and `match_results.csv` only if they changed
+3. runs `python build_leaderboards.py`
+4. commits `elo_snapshots.csv`, `match_results.csv`, and `leaderboards.json` only if they changed
 
 ### Runtime behavior inside the Dash app
 
@@ -228,6 +238,8 @@ Remote CSV reads are cached in-process, and if the remote fetch fails the app fa
 - bundled local CSV files if present
 
 Prediction pages also use a 15-minute `dcc.Interval` so already-open tabs can repaint as fresh Elo data lands.
+
+[data/leaderboard_snapshots.py](/Users/deepa.shalini/Documents/GitHub/plotly_fifa/data/leaderboard_snapshots.py:1) reads `leaderboards.json` from the public GitHub repository at runtime by default, falls back to the bundled local file when needed, and only replays live football-data match detail for completed matches that were not yet included in the latest snapshot.
 
 ## Project Structure
 
@@ -258,7 +270,9 @@ Prediction pages also use a 15-minute `dcc.Interval` so already-open tabs can re
 │       ├── elo_ratings.py
 │       └── group_ratings.py
 ├── calculate_elo.py               # Elo snapshot/result calculation job
+├── build_leaderboards.py          # persisted yellow/red/clean-sheet snapshot job
 ├── elo_snapshots.csv              # persisted rating snapshots
+├── leaderboards.json              # persisted expensive leaderboard metrics
 ├── match_results.csv              # persisted World Cup Elo result rows
 └── requirements.txt
 ```
@@ -295,6 +309,7 @@ export PLOTLY_FIFA_PREDICTIONS_GITHUB_REF="main"
 export PLOTLY_FIFA_PREDICTIONS_BASE_URL=""
 export PLOTLY_FIFA_PREDICTIONS_CACHE_TTL_SECONDS="900"
 export PLOTLY_FIFA_PREDICTIONS_TIMEOUT_SECONDS="10"
+export PLOTLY_FIFA_LEADERBOARDS_SOURCE="remote"  # or "local"; falls back to the predictions settings when omitted
 ```
 
 ### Run the app
@@ -309,9 +324,10 @@ To refresh the prediction CSVs on your machine:
 
 ```bash
 python3 calculate_elo.py
+python3 build_leaderboards.py
 ```
 
-The Elo calculator forces `PLOTLY_FIFA_PREDICTIONS_SOURCE=local` for its own run so it always writes against local CSV files rather than round-tripping through the GitHub-hosted copies.
+The Elo calculator forces `PLOTLY_FIFA_PREDICTIONS_SOURCE=local` for its own run so it always writes against local CSV files rather than round-tripping through the GitHub-hosted copies. The leaderboard builder writes `leaderboards.json` into the repo root so the Dash page can either read it locally or pick it up remotely from the committed repository.
 
 ## Important Notes
 
