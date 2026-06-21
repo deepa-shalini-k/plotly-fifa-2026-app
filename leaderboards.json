@@ -1,0 +1,129 @@
+{
+  "generated_at": "2026-06-21T09:10:41Z",
+  "processed_match_ids": [
+    537327,
+    537328,
+    537329,
+    537330,
+    537333,
+    537334,
+    537335,
+    537336,
+    537339,
+    537340,
+    537341,
+    537342,
+    537345,
+    537346,
+    537347,
+    537348,
+    537351,
+    537352,
+    537353,
+    537354,
+    537357,
+    537358,
+    537359,
+    537360,
+    537363,
+    537364,
+    537369,
+    537370,
+    537391,
+    537392,
+    537397,
+    537398,
+    537403,
+    537404,
+    537409,
+    537410
+  ],
+  "metrics": {
+    "Yellow Cards": [
+      {
+        "kind": "player",
+        "id": 166156,
+        "value": 1,
+        "name": "Livano Comenencia",
+        "flag_emoji": "🇨🇼",
+        "team_name": "Curaçao",
+        "photo_target": "Livano Comenencia"
+      },
+      {
+        "kind": "player",
+        "id": 4280,
+        "value": 1,
+        "name": "Leandro Bacuna",
+        "flag_emoji": "🇨🇼",
+        "team_name": "Curaçao",
+        "photo_target": "Leandro Bacuna"
+      },
+      {
+        "kind": "player",
+        "id": 55417,
+        "value": 1,
+        "name": "Juriën Gaari",
+        "flag_emoji": "🇨🇼",
+        "team_name": "Curaçao",
+        "photo_target": "Juriën Gaari"
+      },
+      {
+        "kind": "player",
+        "id": 7518,
+        "value": 1,
+        "name": "Juninho Bacuna",
+        "flag_emoji": "🇨🇼",
+        "team_name": "Curaçao",
+        "photo_target": "Juninho Bacuna"
+      },
+      {
+        "kind": "player",
+        "id": 24988,
+        "value": 1,
+        "name": "Jordy Alcívar",
+        "flag_emoji": "🇪🇨",
+        "team_name": "Ecuador",
+        "photo_target": "Jordy Alcívar"
+      },
+      {
+        "kind": "player",
+        "id": 6597,
+        "value": 1,
+        "name": "Gervane Kastaneer",
+        "flag_emoji": "🇨🇼",
+        "team_name": "Curaçao",
+        "photo_target": "Gervane Kastaneer"
+      }
+    ],
+    "Red Cards": [],
+    "Clean Sheets": [
+      {
+        "kind": "team",
+        "id": 766,
+        "value": 1,
+        "name": "Japan",
+        "flag_emoji": "🇯🇵",
+        "team_name": "Japan",
+        "photo_target": "Japan"
+      },
+      {
+        "kind": "team",
+        "id": 791,
+        "value": 1,
+        "name": "Ecuador",
+        "flag_emoji": "🇪🇨",
+        "team_name": "Ecuador",
+        "photo_target": "Ecuador"
+      },
+      {
+        "kind": "team",
+        "id": 9460,
+        "value": 1,
+        "name": "Curaçao",
+        "flag_emoji": "🇨🇼",
+        "team_name": "Curaçao",
+        "photo_target": "Curaçao"
+      }
+    ]
+  }
+}
