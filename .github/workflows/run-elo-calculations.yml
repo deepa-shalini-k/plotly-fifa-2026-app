@@ -43,16 +43,19 @@ jobs:
       - name: Rebuild latest Elo data
         run: python calculate_elo.py
 
-      - name: Commit updated CSVs
+      - name: Rebuild leaderboard snapshot
+        run: python build_leaderboards.py
+
+      - name: Commit updated data artifacts
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add elo_snapshots.csv match_results.csv
+          git add elo_snapshots.csv match_results.csv leaderboards.json
           if git diff --cached --quiet; then
-            echo "No predictions data changes to commit."
+            echo "No data artifact changes to commit."
             exit 0
           fi
-          git commit -m "Update Elo prediction data"
+          git commit -m "Update Elo and leaderboard data"
           branch="${GITHUB_REF_NAME:-main}"
           git pull --rebase origin "${branch}"
           git push origin "HEAD:${branch}"
