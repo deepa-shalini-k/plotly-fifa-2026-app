@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-06-22T00:13:39Z",
+  "generated_at": "2026-06-22T05:34:20Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -30,6 +30,7 @@
     537363,
     537364,
     537365,
+    537366,
     537369,
     537370,
     537371,
@@ -155,6 +156,15 @@
       },
       {
         "kind": "player",
+        "id": 4684,
+        "value": 1,
+        "name": "Sarpreet Singh",
+        "flag_emoji": "🇳🇿",
+        "team_name": "New Zealand",
+        "photo_target": "Sarpreet Singh"
+      },
+      {
+        "kind": "player",
         "id": 3574,
         "value": 1,
         "name": "Salem Al Dawsari",
@@ -251,6 +261,15 @@
         "flag_emoji": "🇨🇭",
         "team_name": "Switzerland",
         "photo_target": "Nico Elvedi"
+      },
+      {
+        "kind": "player",
+        "id": 245550,
+        "value": 1,
+        "name": "Mohanad Lashin",
+        "flag_emoji": "🇪🇬",
+        "team_name": "Egypt",
+        "photo_target": "Mohanad Lashin"
       },
       {
         "kind": "player",
@@ -764,6 +783,15 @@
         "flag_emoji": "🇭🇹",
         "team_name": "Haiti",
         "photo_target": "Carlens Arcus"
+      },
+      {
+        "kind": "player",
+        "id": 125117,
+        "value": 1,
+        "name": "Callum McCowatt",
+        "flag_emoji": "🇳🇿",
+        "team_name": "New Zealand",
+        "photo_target": "Callum McCowatt"
       },
       {
         "kind": "player",
