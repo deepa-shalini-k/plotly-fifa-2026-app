@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-06-22T16:07:23Z",
+  "generated_at": "2026-06-22T19:45:43Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -39,6 +39,7 @@
     537392,
     537397,
     537398,
+    537399,
     537403,
     537404,
     537409,
@@ -135,6 +136,15 @@
         "flag_emoji": "🇿🇦",
         "team_name": "South Africa",
         "photo_target": "Thalente Mbatha"
+      },
+      {
+        "kind": "player",
+        "id": 395,
+        "value": 1,
+        "name": "Stefan Posch",
+        "flag_emoji": "🇦🇹",
+        "team_name": "Austria",
+        "photo_target": "Stefan Posch"
       },
       {
         "kind": "player",
@@ -399,6 +409,15 @@
       },
       {
         "kind": "player",
+        "id": 3214,
+        "value": 1,
+        "name": "Leandro Paredes",
+        "flag_emoji": "🇦🇷",
+        "team_name": "Argentina",
+        "photo_target": "Leandro Paredes"
+      },
+      {
+        "kind": "player",
         "id": 4280,
         "value": 1,
         "name": "Leandro Bacuna",
@@ -414,6 +433,15 @@
         "flag_emoji": "🇨🇿",
         "team_name": "Czechia",
         "photo_target": "Ladislav Krejčí"
+      },
+      {
+        "kind": "player",
+        "id": 9549,
+        "value": 1,
+        "name": "Konrad Laimer",
+        "flag_emoji": "🇦🇹",
+        "team_name": "Austria",
+        "photo_target": "Konrad Laimer"
       },
       {
         "kind": "player",
@@ -630,6 +658,15 @@
         "flag_emoji": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
         "team_name": "Scotland",
         "photo_target": "Findlay Curtis"
+      },
+      {
+        "kind": "player",
+        "id": 46125,
+        "value": 1,
+        "name": "Facundo Medina",
+        "flag_emoji": "🇦🇷",
+        "team_name": "Argentina",
+        "photo_target": "Facundo Medina"
       },
       {
         "kind": "player",
@@ -1015,6 +1052,15 @@
       },
       {
         "kind": "team",
+        "id": 762,
+        "value": 2,
+        "name": "Argentina",
+        "flag_emoji": "🇦🇷",
+        "team_name": "Argentina",
+        "photo_target": "Argentina"
+      },
+      {
+        "kind": "team",
         "id": 771,
         "value": 1,
         "name": "United States",
@@ -1147,15 +1193,6 @@
         "flag_emoji": "🇦🇺",
         "team_name": "Australia",
         "photo_target": "Australia"
-      },
-      {
-        "kind": "team",
-        "id": 762,
-        "value": 1,
-        "name": "Argentina",
-        "flag_emoji": "🇦🇷",
-        "team_name": "Argentina",
-        "photo_target": "Argentina"
       }
     ]
   }
