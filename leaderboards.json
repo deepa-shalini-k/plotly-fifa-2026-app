@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-06-23T18:34:16Z",
+  "generated_at": "2026-06-23T20:38:46Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -45,6 +45,7 @@
     537400,
     537403,
     537404,
+    537405,
     537409,
     537410
   ],
@@ -67,6 +68,15 @@
         "flag_emoji": "🇨🇻",
         "team_name": "Cape Verde Islands",
         "photo_target": "Sidny Lopes Cabral"
+      },
+      {
+        "kind": "player",
+        "id": 178769,
+        "value": 2,
+        "name": "Renato Veiga",
+        "flag_emoji": "🇵🇹",
+        "team_name": "Portugal",
+        "photo_target": "Renato Veiga"
       },
       {
         "kind": "player",
@@ -247,6 +257,15 @@
         "flag_emoji": "🇪🇸",
         "team_name": "Spain",
         "photo_target": "Pedri"
+      },
+      {
+        "kind": "player",
+        "id": 232753,
+        "value": 1,
+        "name": "Odiljon Hamrobekov",
+        "flag_emoji": "🇺🇿",
+        "team_name": "Uzbekistan",
+        "photo_target": "Odiljon Hamrobekov"
       },
       {
         "kind": "player",
@@ -1106,6 +1125,15 @@
         "flag_emoji": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
         "team_name": "Scotland",
         "photo_target": "Scotland"
+      },
+      {
+        "kind": "team",
+        "id": 765,
+        "value": 1,
+        "name": "Portugal",
+        "flag_emoji": "🇵🇹",
+        "team_name": "Portugal",
+        "photo_target": "Portugal"
       },
       {
         "kind": "team",
