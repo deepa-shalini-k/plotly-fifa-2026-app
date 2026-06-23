@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-06-23T20:38:46Z",
+  "generated_at": "2026-06-23T22:04:40Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -47,7 +47,8 @@
     537404,
     537405,
     537409,
-    537410
+    537410,
+    537411
   ],
   "metrics": {
     "Yellow Cards": [
@@ -602,6 +603,15 @@
       },
       {
         "kind": "player",
+        "id": 32629,
+        "value": 1,
+        "name": "Iñaki Williams",
+        "flag_emoji": "🇬🇭",
+        "team_name": "Ghana",
+        "photo_target": "Iñaki Williams"
+      },
+      {
+        "kind": "player",
         "id": 8296,
         "value": 1,
         "name": "Issa Diop",
@@ -788,6 +798,15 @@
         "flag_emoji": "🇨🇭",
         "team_name": "Switzerland",
         "photo_target": "Denis Zakaria"
+      },
+      {
+        "kind": "player",
+        "id": 8215,
+        "value": 1,
+        "name": "Declan Rice",
+        "flag_emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+        "team_name": "England",
+        "photo_target": "Declan Rice"
       },
       {
         "kind": "player",
@@ -1101,6 +1120,15 @@
       },
       {
         "kind": "team",
+        "id": 763,
+        "value": 2,
+        "name": "Ghana",
+        "flag_emoji": "🇬🇭",
+        "team_name": "Ghana",
+        "photo_target": "Ghana"
+      },
+      {
+        "kind": "team",
         "id": 762,
         "value": 2,
         "name": "Argentina",
@@ -1182,21 +1210,21 @@
       },
       {
         "kind": "team",
-        "id": 763,
-        "value": 1,
-        "name": "Ghana",
-        "flag_emoji": "🇬🇭",
-        "team_name": "Ghana",
-        "photo_target": "Ghana"
-      },
-      {
-        "kind": "team",
         "id": 773,
         "value": 1,
         "name": "France",
         "flag_emoji": "🇫🇷",
         "team_name": "France",
         "photo_target": "France"
+      },
+      {
+        "kind": "team",
+        "id": 770,
+        "value": 1,
+        "name": "England",
+        "flag_emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+        "team_name": "England",
+        "photo_target": "England"
       },
       {
         "kind": "team",
