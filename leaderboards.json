@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-06-22T23:14:47Z",
+  "generated_at": "2026-06-23T01:25:53Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -37,6 +37,7 @@
     537372,
     537391,
     537392,
+    537393,
     537397,
     537398,
     537399,
@@ -877,6 +878,15 @@
       },
       {
         "kind": "player",
+        "id": 31373,
+        "value": 1,
+        "name": "Amir Al Ammari",
+        "flag_emoji": "🇮🇶",
+        "team_name": "Iraq",
+        "photo_target": "Amir Al Ammari"
+      },
+      {
+        "kind": "player",
         "id": 81816,
         "value": 1,
         "name": "Amar Dedić",
@@ -1130,6 +1140,15 @@
         "flag_emoji": "🇬🇭",
         "team_name": "Ghana",
         "photo_target": "Ghana"
+      },
+      {
+        "kind": "team",
+        "id": 773,
+        "value": 1,
+        "name": "France",
+        "flag_emoji": "🇫🇷",
+        "team_name": "France",
+        "photo_target": "France"
       },
       {
         "kind": "team",
