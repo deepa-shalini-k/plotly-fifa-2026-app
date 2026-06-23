@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-06-23T01:25:53Z",
+  "generated_at": "2026-06-23T05:43:18Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -38,9 +38,11 @@
     537391,
     537392,
     537393,
+    537394,
     537397,
     537398,
     537399,
+    537400,
     537403,
     537404,
     537409,
@@ -227,6 +229,15 @@
         "flag_emoji": "🇹🇳",
         "team_name": "Tunisia",
         "photo_target": "Rani Khedira"
+      },
+      {
+        "kind": "player",
+        "id": 124715,
+        "value": 1,
+        "name": "Ramiz Zerrouki",
+        "flag_emoji": "🇩🇿",
+        "team_name": "Algeria",
+        "photo_target": "Ramiz Zerrouki"
       },
       {
         "kind": "player",
@@ -578,6 +589,15 @@
         "flag_emoji": "🇲🇦",
         "team_name": "Morocco",
         "photo_target": "Issa Diop"
+      },
+      {
+        "kind": "player",
+        "id": 295354,
+        "value": 1,
+        "name": "Husam Abu Dahab",
+        "flag_emoji": "🇯🇴",
+        "team_name": "Jordan",
+        "photo_target": "Husam Abu Dahab"
       },
       {
         "kind": "player",

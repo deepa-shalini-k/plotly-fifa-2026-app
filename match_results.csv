@@ -79,7 +79,11 @@ match_date,team,opponent,team_score,opponent_score,tournament,elo_change,new_elo
 2026-06-21,Saudi Arabia,Spain,0,4,World Cup,-5,1593,-1,65,H
 2026-06-21,Spain,Saudi Arabia,4,0,World Cup,5,2134,0,1,H
 2026-06-21,Uruguay,Cape Verde Islands,2,2,World Cup,-19,1851,-5,21,H
+2026-06-22,Algeria,Jordan,2,1,World Cup,21,1780,6,27,J
 2026-06-22,Argentina,Austria,2,0,World Cup,16,2144,1,1,J
 2026-06-22,Austria,Argentina,0,2,World Cup,-16,1841,-1,21,J
 2026-06-22,France,Iraq,3,0,World Cup,6,2090,0,3,I
 2026-06-22,Iraq,France,0,3,World Cup,-6,1586,-1,67,I
+2026-06-22,Jordan,Algeria,1,2,World Cup,-21,1632,-2,57,J
+2026-06-22,Norway,Senegal,3,2,World Cup,22,1951,0,10,I
+2026-06-22,Senegal,Norway,2,3,World Cup,-22,1817,-1,23,I
