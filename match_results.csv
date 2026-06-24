@@ -87,7 +87,9 @@ match_date,team,opponent,team_score,opponent_score,tournament,elo_change,new_elo
 2026-06-22,Jordan,Algeria,1,2,World Cup,-21,1632,-2,57,J
 2026-06-22,Norway,Senegal,3,2,World Cup,22,1951,0,10,I
 2026-06-22,Senegal,Norway,2,3,World Cup,-22,1817,-1,23,I
+2026-06-23,Croatia,Panama,1,0,World Cup,15,1896,2,12,L
 2026-06-23,England,Ghana,0,0,World Cup,-27,2028,0,4,L
 2026-06-23,Ghana,England,0,0,World Cup,27,1584,4,68,L
+2026-06-23,Panama,Croatia,0,1,World Cup,-15,1668,-3,53,L
 2026-06-23,Portugal,Uzbekistan,5,0,World Cup,21,1988,2,6,K
 2026-06-23,Uzbekistan,Portugal,0,5,World Cup,-21,1677,-4,51,K

@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-06-23T23:20:16Z",
+  "generated_at": "2026-06-24T01:22:10Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -48,7 +48,8 @@
     537405,
     537409,
     537410,
-    537411
+    537411,
+    537412
   ],
   "metrics": {
     "Yellow Cards": [
@@ -78,6 +79,15 @@
         "flag_emoji": "🇵🇹",
         "team_name": "Portugal",
         "photo_target": "Renato Veiga"
+      },
+      {
+        "kind": "player",
+        "id": 39139,
+        "value": 1,
+        "name": "Édgar Bárcenas",
+        "flag_emoji": "🇵🇦",
+        "team_name": "Panama",
+        "photo_target": "Édgar Bárcenas"
       },
       {
         "kind": "player",
@@ -249,6 +259,15 @@
         "flag_emoji": "🇩🇿",
         "team_name": "Algeria",
         "photo_target": "Ramiz Zerrouki"
+      },
+      {
+        "kind": "player",
+        "id": 154013,
+        "value": 1,
+        "name": "Petar Sucic",
+        "flag_emoji": "🇭🇷",
+        "team_name": "Croatia",
+        "photo_target": "Petar Sucic"
       },
       {
         "kind": "player",
@@ -1243,6 +1262,15 @@
         "flag_emoji": "🇨🇼",
         "team_name": "Curaçao",
         "photo_target": "Curaçao"
+      },
+      {
+        "kind": "team",
+        "id": 799,
+        "value": 1,
+        "name": "Croatia",
+        "flag_emoji": "🇭🇷",
+        "team_name": "Croatia",
+        "photo_target": "Croatia"
       },
       {
         "kind": "team",
