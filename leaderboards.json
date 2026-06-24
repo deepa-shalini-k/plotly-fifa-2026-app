@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-06-24T01:22:10Z",
+  "generated_at": "2026-06-24T05:32:02Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -46,6 +46,7 @@
     537403,
     537404,
     537405,
+    537406,
     537409,
     537410,
     537411,
@@ -586,6 +587,24 @@
       },
       {
         "kind": "player",
+        "id": 22113,
+        "value": 1,
+        "name": "Jhon Lucumí",
+        "flag_emoji": "🇨🇴",
+        "team_name": "Colombia",
+        "photo_target": "Jhon Lucumí"
+      },
+      {
+        "kind": "player",
+        "id": 3737,
+        "value": 1,
+        "name": "Jefferson Lerma",
+        "flag_emoji": "🇨🇴",
+        "team_name": "Colombia",
+        "photo_target": "Jefferson Lerma"
+      },
+      {
+        "kind": "player",
         "id": 788,
         "value": 1,
         "name": "Jean-Ricner Bellegarde",
@@ -862,6 +881,15 @@
         "flag_emoji": "🇺🇸",
         "team_name": "United States",
         "photo_target": "Chris Richards"
+      },
+      {
+        "kind": "player",
+        "id": 30876,
+        "value": 1,
+        "name": "Charles Pickel",
+        "flag_emoji": "🇨🇩",
+        "team_name": "Congo DR",
+        "photo_target": "Charles Pickel"
       },
       {
         "kind": "player",
@@ -1271,6 +1299,15 @@
         "flag_emoji": "🇭🇷",
         "team_name": "Croatia",
         "photo_target": "Croatia"
+      },
+      {
+        "kind": "team",
+        "id": 818,
+        "value": 1,
+        "name": "Colombia",
+        "flag_emoji": "🇨🇴",
+        "team_name": "Colombia",
+        "photo_target": "Colombia"
       },
       {
         "kind": "team",
