@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-06-24T20:04:06Z",
+  "generated_at": "2026-06-24T21:42:04Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -11,6 +11,8 @@
     537334,
     537335,
     537336,
+    537337,
+    537338,
     537339,
     537340,
     537341,
@@ -80,6 +82,15 @@
         "flag_emoji": "🇵🇹",
         "team_name": "Portugal",
         "photo_target": "Renato Veiga"
+      },
+      {
+        "kind": "player",
+        "id": 115832,
+        "value": 2,
+        "name": "Ahmed Fathy",
+        "flag_emoji": "🇶🇦",
+        "team_name": "Qatar",
+        "photo_target": "Ahmed Fathy"
       },
       {
         "kind": "player",
@@ -461,6 +472,15 @@
       },
       {
         "kind": "player",
+        "id": 110807,
+        "value": 1,
+        "name": "Liam Millar",
+        "flag_emoji": "🇨🇦",
+        "team_name": "Canada",
+        "photo_target": "Liam Millar"
+      },
+      {
+        "kind": "player",
         "id": 3214,
         "value": 1,
         "name": "Leandro Paredes",
@@ -686,6 +706,15 @@
       },
       {
         "kind": "player",
+        "id": 3477,
+        "value": 1,
+        "name": "Granit Xhaka",
+        "flag_emoji": "🇨🇭",
+        "team_name": "Switzerland",
+        "photo_target": "Granit Xhaka"
+      },
+      {
+        "kind": "player",
         "id": 254209,
         "value": 1,
         "name": "Gi-hyuk Lee",
@@ -764,6 +793,15 @@
         "flag_emoji": "🇹🇷",
         "team_name": "Turkey",
         "photo_target": "Evren Eren Elmalı"
+      },
+      {
+        "kind": "player",
+        "id": 221764,
+        "value": 1,
+        "name": "Ermin Mahmic",
+        "flag_emoji": "🇧🇦",
+        "team_name": "Bosnia-Herzegovina",
+        "photo_target": "Ermin Mahmic"
       },
       {
         "kind": "player",
@@ -863,6 +901,15 @@
         "flag_emoji": "🇵🇦",
         "team_name": "Panama",
         "photo_target": "César Blackman"
+      },
+      {
+        "kind": "player",
+        "id": 15958,
+        "value": 1,
+        "name": "Cyle Larin",
+        "flag_emoji": "🇨🇦",
+        "team_name": "Canada",
+        "photo_target": "Cyle Larin"
       },
       {
         "kind": "player",
@@ -1025,15 +1072,6 @@
         "flag_emoji": "🇦🇺",
         "team_name": "Australia",
         "photo_target": "Alessandro Circati"
-      },
-      {
-        "kind": "player",
-        "id": 115832,
-        "value": 1,
-        "name": "Ahmed Fathy",
-        "flag_emoji": "🇶🇦",
-        "team_name": "Qatar",
-        "photo_target": "Ahmed Fathy"
       },
       {
         "kind": "player",

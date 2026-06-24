@@ -95,3 +95,7 @@ match_date,team,opponent,team_score,opponent_score,tournament,elo_change,new_elo
 2026-06-23,Panama,Croatia,0,1,World Cup,-15,1668,-3,53,L
 2026-06-23,Portugal,Uzbekistan,5,0,World Cup,21,1988,2,6,K
 2026-06-23,Uzbekistan,Portugal,0,5,World Cup,-21,1677,-4,51,K
+2026-06-24,Bosnia and Herzegovina,Qatar,3,1,World Cup,26,1622,4,60,B
+2026-06-24,Canada,Switzerland,1,2,World Cup,-29,1748,-6,35,B
+2026-06-24,Qatar,Bosnia and Herzegovina,1,3,World Cup,-26,1411,-13,105,B
+2026-06-24,Switzerland,Canada,2,1,World Cup,29,1914,2,12,B
