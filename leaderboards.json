@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-06-24T22:54:08Z",
+  "generated_at": "2026-06-25T00:11:41Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -17,6 +17,8 @@
     537340,
     537341,
     537342,
+    537343,
+    537344,
     537345,
     537346,
     537347,
@@ -226,6 +228,15 @@
         "flag_emoji": "🇮🇷",
         "team_name": "Iran",
         "photo_target": "Saeid Ezatolahi"
+      },
+      {
+        "kind": "player",
+        "id": 34495,
+        "value": 1,
+        "name": "Ryan Christie",
+        "flag_emoji": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+        "team_name": "Scotland",
+        "photo_target": "Ryan Christie"
       },
       {
         "kind": "player",
@@ -580,6 +591,15 @@
       },
       {
         "kind": "player",
+        "id": 152737,
+        "value": 1,
+        "name": "Josué Casimir",
+        "flag_emoji": "🇭🇹",
+        "team_name": "Haiti",
+        "photo_target": "Josué Casimir"
+      },
+      {
+        "kind": "player",
         "id": 24988,
         "value": 1,
         "name": "Jordy Alcívar",
@@ -595,6 +615,15 @@
         "flag_emoji": "🇦🇺",
         "team_name": "Australia",
         "photo_target": "Jordan Bos"
+      },
+      {
+        "kind": "player",
+        "id": 170624,
+        "value": 1,
+        "name": "Johny Placide",
+        "flag_emoji": "🇭🇹",
+        "team_name": "Haiti",
+        "photo_target": "Johny Placide"
       },
       {
         "kind": "player",
@@ -787,6 +816,15 @@
       },
       {
         "kind": "player",
+        "id": 8749,
+        "value": 1,
+        "name": "Fabinho",
+        "flag_emoji": "🇧🇷",
+        "team_name": "Brazil",
+        "photo_target": "Fabinho"
+      },
+      {
+        "kind": "player",
         "id": 145831,
         "value": 1,
         "name": "Evren Eren Elmalı",
@@ -829,6 +867,15 @@
         "flag_emoji": "🇧🇦",
         "team_name": "Bosnia-Herzegovina",
         "photo_target": "Edin Džeko"
+      },
+      {
+        "kind": "player",
+        "id": 5380,
+        "value": 1,
+        "name": "Duckens Nazon",
+        "flag_emoji": "🇭🇹",
+        "team_name": "Haiti",
+        "photo_target": "Duckens Nazon"
       },
       {
         "kind": "player",
@@ -892,6 +939,15 @@
         "flag_emoji": "🇭🇹",
         "team_name": "Haiti",
         "photo_target": "Danley Jean Jacques"
+      },
+      {
+        "kind": "player",
+        "id": 7881,
+        "value": 1,
+        "name": "Danilo Luiz da Silva",
+        "flag_emoji": "🇧🇷",
+        "team_name": "Brazil",
+        "photo_target": "Danilo Luiz da Silva"
       },
       {
         "kind": "player",
@@ -1214,6 +1270,15 @@
       },
       {
         "kind": "team",
+        "id": 764,
+        "value": 2,
+        "name": "Brazil",
+        "flag_emoji": "🇧🇷",
+        "team_name": "Brazil",
+        "photo_target": "Brazil"
+      },
+      {
+        "kind": "team",
         "id": 762,
         "value": 2,
         "name": "Argentina",
@@ -1364,15 +1429,6 @@
         "flag_emoji": "🇨🇦",
         "team_name": "Canada",
         "photo_target": "Canada"
-      },
-      {
-        "kind": "team",
-        "id": 764,
-        "value": 1,
-        "name": "Brazil",
-        "flag_emoji": "🇧🇷",
-        "team_name": "Brazil",
-        "photo_target": "Brazil"
       },
       {
         "kind": "team",
