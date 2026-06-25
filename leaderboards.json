@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-06-25T21:57:26Z",
+  "generated_at": "2026-06-25T23:24:37Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -29,6 +29,8 @@
     537352,
     537353,
     537354,
+    537355,
+    537356,
     537357,
     537358,
     537359,
@@ -86,6 +88,15 @@
         "flag_emoji": "🇵🇹",
         "team_name": "Portugal",
         "photo_target": "Renato Veiga"
+      },
+      {
+        "kind": "player",
+        "id": 7518,
+        "value": 2,
+        "name": "Juninho Bacuna",
+        "flag_emoji": "🇨🇼",
+        "team_name": "Curaçao",
+        "photo_target": "Juninho Bacuna"
       },
       {
         "kind": "player",
@@ -284,6 +295,15 @@
         "flag_emoji": "🇩🇿",
         "team_name": "Algeria",
         "photo_target": "Ramiz Zerrouki"
+      },
+      {
+        "kind": "player",
+        "id": 125674,
+        "value": 1,
+        "name": "Piero Hincapié",
+        "flag_emoji": "🇪🇨",
+        "team_name": "Ecuador",
+        "photo_target": "Piero Hincapié"
       },
       {
         "kind": "player",
@@ -566,15 +586,6 @@
       },
       {
         "kind": "player",
-        "id": 7518,
-        "value": 1,
-        "name": "Juninho Bacuna",
-        "flag_emoji": "🇨🇼",
-        "team_name": "Curaçao",
-        "photo_target": "Juninho Bacuna"
-      },
-      {
-        "kind": "player",
         "id": 141752,
         "value": 1,
         "name": "Juan Cáceres",
@@ -752,6 +763,15 @@
         "flag_emoji": "🇨🇭",
         "team_name": "Switzerland",
         "photo_target": "Granit Xhaka"
+      },
+      {
+        "kind": "player",
+        "id": 56066,
+        "value": 1,
+        "name": "Gonzalo Plata",
+        "flag_emoji": "🇪🇨",
+        "team_name": "Ecuador",
+        "photo_target": "Gonzalo Plata"
       },
       {
         "kind": "player",
@@ -1160,6 +1180,24 @@
       },
       {
         "kind": "player",
+        "id": 202665,
+        "value": 1,
+        "name": "Aleksandar Pavlović",
+        "flag_emoji": "🇩🇪",
+        "team_name": "Germany",
+        "photo_target": "Aleksandar Pavlović"
+      },
+      {
+        "kind": "player",
+        "id": 24670,
+        "value": 1,
+        "name": "Alan Franco",
+        "flag_emoji": "🇪🇨",
+        "team_name": "Ecuador",
+        "photo_target": "Alan Franco"
+      },
+      {
+        "kind": "player",
         "id": 245553,
         "value": 1,
         "name": "Ahmed El Fotouh",
@@ -1290,6 +1328,15 @@
       },
       {
         "kind": "team",
+        "id": 1935,
+        "value": 2,
+        "name": "Ivory Coast",
+        "flag_emoji": "🇨🇮",
+        "team_name": "Ivory Coast",
+        "photo_target": "Ivory Coast"
+      },
+      {
+        "kind": "team",
         "id": 763,
         "value": 2,
         "name": "Ghana",
@@ -1377,15 +1424,6 @@
         "flag_emoji": "🇯🇵",
         "team_name": "Japan",
         "photo_target": "Japan"
-      },
-      {
-        "kind": "team",
-        "id": 1935,
-        "value": 1,
-        "name": "Ivory Coast",
-        "flag_emoji": "🇨🇮",
-        "team_name": "Ivory Coast",
-        "photo_target": "Ivory Coast"
       },
       {
         "kind": "team",

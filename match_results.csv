@@ -107,3 +107,7 @@ match_date,team,opponent,team_score,opponent_score,tournament,elo_change,new_elo
 2026-06-24,South Africa,South Korea,1,0,World Cup,48,1575,7,70,A
 2026-06-24,South Korea,South Africa,0,1,World Cup,-48,1723,-11,40,A
 2026-06-24,Switzerland,Canada,2,1,World Cup,29,1914,2,12,B
+2026-06-25,Curaçao,Ivory Coast,0,2,World Cup,-15,1438,-2,91,E
+2026-06-25,Ecuador,Germany,2,1,World Cup,38,1902,5,14,E
+2026-06-25,Germany,Ecuador,1,2,World Cup,-38,1916,-2,11,E
+2026-06-25,Ivory Coast,Curaçao,2,0,World Cup,15,1743,2,36,E
