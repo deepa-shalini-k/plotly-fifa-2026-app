@@ -1,12 +1,14 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-06-25T00:11:41Z",
+  "generated_at": "2026-06-25T04:35:54Z",
   "processed_match_ids": [
     537327,
     537328,
     537329,
     537330,
+    537331,
+    537332,
     537333,
     537334,
     537335,
@@ -735,6 +737,15 @@
       },
       {
         "kind": "player",
+        "id": 189762,
+        "value": 1,
+        "name": "Gue-Sung Cho",
+        "flag_emoji": "🇰🇷",
+        "team_name": "South Korea",
+        "photo_target": "Gue-Sung Cho"
+      },
+      {
+        "kind": "player",
         "id": 3477,
         "value": 1,
         "name": "Granit Xhaka",
@@ -858,6 +869,15 @@
         "flag_emoji": "🇮🇷",
         "team_name": "Iran",
         "photo_target": "Ehsan Hajsafi"
+      },
+      {
+        "kind": "player",
+        "id": 3293,
+        "value": 1,
+        "name": "Edson Álvarez",
+        "flag_emoji": "🇲🇽",
+        "team_name": "Mexico",
+        "photo_target": "Edson Álvarez"
       },
       {
         "kind": "player",
@@ -1068,6 +1088,15 @@
       },
       {
         "kind": "player",
+        "id": 33994,
+        "value": 1,
+        "name": "Aubrey Modiba",
+        "flag_emoji": "🇿🇦",
+        "team_name": "South Africa",
+        "photo_target": "Aubrey Modiba"
+      },
+      {
+        "kind": "player",
         "id": 34411,
         "value": 1,
         "name": "Anthony Ralston",
@@ -1243,21 +1272,21 @@
     "Clean Sheets": [
       {
         "kind": "team",
+        "id": 769,
+        "value": 3,
+        "name": "Mexico",
+        "flag_emoji": "🇲🇽",
+        "team_name": "Mexico",
+        "photo_target": "Mexico"
+      },
+      {
+        "kind": "team",
         "id": 760,
         "value": 2,
         "name": "Spain",
         "flag_emoji": "🇪🇸",
         "team_name": "Spain",
         "photo_target": "Spain"
-      },
-      {
-        "kind": "team",
-        "id": 769,
-        "value": 2,
-        "name": "Mexico",
-        "flag_emoji": "🇲🇽",
-        "team_name": "Mexico",
-        "photo_target": "Mexico"
       },
       {
         "kind": "team",
@@ -1294,6 +1323,15 @@
         "flag_emoji": "🇺🇸",
         "team_name": "United States",
         "photo_target": "United States"
+      },
+      {
+        "kind": "team",
+        "id": 774,
+        "value": 1,
+        "name": "South Africa",
+        "flag_emoji": "🇿🇦",
+        "team_name": "South Africa",
+        "photo_target": "South Africa"
       },
       {
         "kind": "team",
