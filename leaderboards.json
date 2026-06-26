@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-06-25T23:24:37Z",
+  "generated_at": "2026-06-26T01:37:04Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -35,6 +35,8 @@
     537358,
     537359,
     537360,
+    537361,
+    537362,
     537363,
     537364,
     537365,
@@ -154,6 +156,15 @@
       },
       {
         "kind": "player",
+        "id": 8279,
+        "value": 1,
+        "name": "Viktor Gyökeres",
+        "flag_emoji": "🇸🇪",
+        "team_name": "Sweden",
+        "photo_target": "Viktor Gyökeres"
+      },
+      {
+        "kind": "player",
         "id": 77596,
         "value": 1,
         "name": "Tyler Adams",
@@ -196,6 +207,15 @@
         "flag_emoji": "🇦🇹",
         "team_name": "Austria",
         "photo_target": "Stefan Posch"
+      },
+      {
+        "kind": "player",
+        "id": 49097,
+        "value": 1,
+        "name": "Shogo Taniguchi",
+        "flag_emoji": "🇯🇵",
+        "team_name": "Japan",
+        "photo_target": "Shogo Taniguchi"
       },
       {
         "kind": "player",
@@ -718,6 +738,15 @@
         "flag_emoji": "🇲🇦",
         "team_name": "Morocco",
         "photo_target": "Issa Diop"
+      },
+      {
+        "kind": "player",
+        "id": 167031,
+        "value": 1,
+        "name": "Isak Hien",
+        "flag_emoji": "🇸🇪",
+        "team_name": "Sweden",
+        "photo_target": "Isak Hien"
       },
       {
         "kind": "player",
