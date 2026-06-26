@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-06-26T01:37:04Z",
+  "generated_at": "2026-06-26T05:54:54Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -25,6 +25,8 @@
     537346,
     537347,
     537348,
+    537349,
+    537350,
     537351,
     537352,
     537353,
@@ -99,6 +101,15 @@
         "flag_emoji": "🇨🇼",
         "team_name": "Curaçao",
         "photo_target": "Juninho Bacuna"
+      },
+      {
+        "kind": "player",
+        "id": 178951,
+        "value": 2,
+        "name": "Diego Gómez",
+        "flag_emoji": "🇵🇾",
+        "team_name": "Paraguay",
+        "photo_target": "Diego Gómez"
       },
       {
         "kind": "player",
@@ -234,6 +245,15 @@
         "flag_emoji": "🇨🇮",
         "team_name": "Ivory Coast",
         "photo_target": "Seko Fofana"
+      },
+      {
+        "kind": "player",
+        "id": 140416,
+        "value": 1,
+        "name": "Sebastian Berhalter",
+        "flag_emoji": "🇺🇸",
+        "team_name": "United States",
+        "photo_target": "Sebastian Berhalter"
       },
       {
         "kind": "player",
@@ -723,6 +743,15 @@
       },
       {
         "kind": "player",
+        "id": 3421,
+        "value": 1,
+        "name": "Jackson Irvine",
+        "flag_emoji": "🇦🇺",
+        "team_name": "Australia",
+        "photo_target": "Jackson Irvine"
+      },
+      {
+        "kind": "player",
         "id": 32629,
         "value": 1,
         "name": "Iñaki Williams",
@@ -963,15 +992,6 @@
         "flag_emoji": "🇨🇻",
         "team_name": "Cape Verde Islands",
         "photo_target": "Diney Borges"
-      },
-      {
-        "kind": "player",
-        "id": 178951,
-        "value": 1,
-        "name": "Diego Gómez",
-        "flag_emoji": "🇵🇾",
-        "team_name": "Paraguay",
-        "photo_target": "Diego Gómez"
       },
       {
         "kind": "player",
@@ -1357,6 +1377,15 @@
       },
       {
         "kind": "team",
+        "id": 761,
+        "value": 2,
+        "name": "Paraguay",
+        "flag_emoji": "🇵🇾",
+        "team_name": "Paraguay",
+        "photo_target": "Paraguay"
+      },
+      {
+        "kind": "team",
         "id": 1935,
         "value": 2,
         "name": "Ivory Coast",
@@ -1381,6 +1410,15 @@
         "flag_emoji": "🇧🇷",
         "team_name": "Brazil",
         "photo_target": "Brazil"
+      },
+      {
+        "kind": "team",
+        "id": 779,
+        "value": 2,
+        "name": "Australia",
+        "flag_emoji": "🇦🇺",
+        "team_name": "Australia",
+        "photo_target": "Australia"
       },
       {
         "kind": "team",
@@ -1426,15 +1464,6 @@
         "flag_emoji": "🇵🇹",
         "team_name": "Portugal",
         "photo_target": "Portugal"
-      },
-      {
-        "kind": "team",
-        "id": 761,
-        "value": 1,
-        "name": "Paraguay",
-        "flag_emoji": "🇵🇾",
-        "team_name": "Paraguay",
-        "photo_target": "Paraguay"
       },
       {
         "kind": "team",
@@ -1543,15 +1572,6 @@
         "flag_emoji": "🇧🇪",
         "team_name": "Belgium",
         "photo_target": "Belgium"
-      },
-      {
-        "kind": "team",
-        "id": 779,
-        "value": 1,
-        "name": "Australia",
-        "flag_emoji": "🇦🇺",
-        "team_name": "Australia",
-        "photo_target": "Australia"
       }
     ]
   }
