@@ -119,3 +119,7 @@ match_date,team,opponent,team_score,opponent_score,tournament,elo_change,new_elo
 2026-06-25,Tunisia,Netherlands,1,3,World Cup,-8,1562,-1,73,F
 2026-06-25,Turkey,USA,3,2,World Cup,39,1852,5,20,D
 2026-06-25,USA,Turkey,2,3,World Cup,-39,1781,-4,26,D
+2026-06-26,France,Norway,4,1,World Cup,33,2123,0,3,I
+2026-06-26,Iraq,Senegal,0,5,World Cup,-25,1561,-6,73,I
+2026-06-26,Norway,France,1,4,World Cup,-33,1918,0,9,I
+2026-06-26,Senegal,Iraq,5,0,World Cup,25,1842,1,22,I
