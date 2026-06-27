@@ -131,3 +131,7 @@ match_date,team,opponent,team_score,opponent_score,tournament,elo_change,new_elo
 2026-06-26,Senegal,Iraq,5,0,World Cup,25,1842,1,22,I
 2026-06-26,Spain,Uruguay,1,0,World Cup,10,2144,1,1,H
 2026-06-26,Uruguay,Spain,0,1,World Cup,-10,1841,-1,22,H
+2026-06-27,Croatia,Ghana,2,1,World Cup,9,1905,1,14,L
+2026-06-27,England,Panama,2,0,World Cup,10,2038,0,4,L
+2026-06-27,Ghana,Croatia,1,2,World Cup,-9,1575,-2,69,L
+2026-06-27,Panama,England,0,2,World Cup,-10,1658,-2,54,L

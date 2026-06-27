@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-06-27T22:41:19Z",
+  "generated_at": "2026-06-27T23:43:13Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -68,7 +68,9 @@
     537409,
     537410,
     537411,
-    537412
+    537412,
+    537413,
+    537414
   ],
   "metrics": {
     "Yellow Cards": [
@@ -704,6 +706,15 @@
       },
       {
         "kind": "player",
+        "id": 202896,
+        "value": 1,
+        "name": "Kojo Peprah Oppong",
+        "flag_emoji": "🇬🇭",
+        "team_name": "Ghana",
+        "photo_target": "Kojo Peprah Oppong"
+      },
+      {
+        "kind": "player",
         "id": 34494,
         "value": 1,
         "name": "Kenny McLean",
@@ -764,6 +775,15 @@
         "flag_emoji": "🇧🇦",
         "team_name": "Bosnia-Herzegovina",
         "photo_target": "Jovo Lukić"
+      },
+      {
+        "kind": "player",
+        "id": 3868,
+        "value": 1,
+        "name": "José Fajardo",
+        "flag_emoji": "🇵🇦",
+        "team_name": "Panama",
+        "photo_target": "José Fajardo"
       },
       {
         "kind": "player",
@@ -848,6 +868,15 @@
       },
       {
         "kind": "player",
+        "id": 176718,
+        "value": 1,
+        "name": "Jarell Quansah",
+        "flag_emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+        "team_name": "England",
+        "photo_target": "Jarell Quansah"
+      },
+      {
+        "kind": "player",
         "id": 4795,
         "value": 1,
         "name": "Jacob Italiano",
@@ -881,6 +910,15 @@
         "flag_emoji": "🇬🇭",
         "team_name": "Ghana",
         "photo_target": "Iñaki Williams"
+      },
+      {
+        "kind": "player",
+        "id": 2004,
+        "value": 1,
+        "name": "Ivan Perišić",
+        "flag_emoji": "🇭🇷",
+        "team_name": "Croatia",
+        "photo_target": "Ivan Perišić"
       },
       {
         "kind": "player",
@@ -1343,6 +1381,15 @@
       },
       {
         "kind": "player",
+        "id": 76711,
+        "value": 1,
+        "name": "Andrés Andrade",
+        "flag_emoji": "🇵🇦",
+        "team_name": "Panama",
+        "photo_target": "Andrés Andrade"
+      },
+      {
+        "kind": "player",
         "id": 7868,
         "value": 1,
         "name": "Andrew Robertson",
@@ -1599,6 +1646,15 @@
       },
       {
         "kind": "team",
+        "id": 770,
+        "value": 2,
+        "name": "England",
+        "flag_emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+        "team_name": "England",
+        "photo_target": "England"
+      },
+      {
+        "kind": "team",
         "id": 1930,
         "value": 2,
         "name": "Cape Verde Islands",
@@ -1722,15 +1778,6 @@
         "flag_emoji": "🇫🇷",
         "team_name": "France",
         "photo_target": "France"
-      },
-      {
-        "kind": "team",
-        "id": 770,
-        "value": 1,
-        "name": "England",
-        "flag_emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-        "team_name": "England",
-        "photo_target": "England"
       },
       {
         "kind": "team",
