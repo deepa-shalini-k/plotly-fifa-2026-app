@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-06-27T00:08:40Z",
+  "generated_at": "2026-06-27T04:16:10Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -47,6 +47,8 @@
     537370,
     537371,
     537372,
+    537373,
+    537374,
     537391,
     537392,
     537393,
@@ -142,6 +144,15 @@
       },
       {
         "kind": "player",
+        "id": 213278,
+        "value": 1,
+        "name": "Álex Baena",
+        "flag_emoji": "🇪🇸",
+        "team_name": "Spain",
+        "photo_target": "Álex Baena"
+      },
+      {
+        "kind": "player",
         "id": 249839,
         "value": 1,
         "name": "Zaid Tahseen",
@@ -166,6 +177,15 @@
         "flag_emoji": "🇸🇪",
         "team_name": "Sweden",
         "photo_target": "Yasin Ayari"
+      },
+      {
+        "kind": "player",
+        "id": 213136,
+        "value": 1,
+        "name": "Wagner Pina",
+        "flag_emoji": "🇨🇻",
+        "team_name": "Cape Verde Islands",
+        "photo_target": "Wagner Pina"
       },
       {
         "kind": "player",
@@ -265,6 +285,15 @@
         "flag_emoji": "🇺🇸",
         "team_name": "United States",
         "photo_target": "Sebastian Berhalter"
+      },
+      {
+        "kind": "player",
+        "id": 129098,
+        "value": 1,
+        "name": "Saud Abdulhamid",
+        "flag_emoji": "🇸🇦",
+        "team_name": "Saudi Arabia",
+        "photo_target": "Saud Abdulhamid"
       },
       {
         "kind": "player",
@@ -430,12 +459,30 @@
       },
       {
         "kind": "player",
+        "id": 168795,
+        "value": 1,
+        "name": "Nicolas de la Cruz",
+        "flag_emoji": "🇺🇾",
+        "team_name": "Uruguay",
+        "photo_target": "Nicolas de la Cruz"
+      },
+      {
+        "kind": "player",
         "id": 3475,
         "value": 1,
         "name": "Nico Elvedi",
         "flag_emoji": "🇨🇭",
         "team_name": "Switzerland",
         "photo_target": "Nico Elvedi"
+      },
+      {
+        "kind": "player",
+        "id": 166119,
+        "value": 1,
+        "name": "Nasser Al Dawsari",
+        "flag_emoji": "🇸🇦",
+        "team_name": "Saudi Arabia",
+        "photo_target": "Nasser Al Dawsari"
       },
       {
         "kind": "player",
@@ -655,6 +702,15 @@
       },
       {
         "kind": "player",
+        "id": 152435,
+        "value": 1,
+        "name": "Juan Sanabria",
+        "flag_emoji": "🇺🇾",
+        "team_name": "Uruguay",
+        "photo_target": "Juan Sanabria"
+      },
+      {
+        "kind": "player",
         "id": 141752,
         "value": 1,
         "name": "Juan Cáceres",
@@ -826,6 +882,15 @@
       },
       {
         "kind": "player",
+        "id": 3165,
+        "value": 1,
+        "name": "Guillermo Varela",
+        "flag_emoji": "🇺🇾",
+        "team_name": "Uruguay",
+        "photo_target": "Guillermo Varela"
+      },
+      {
+        "kind": "player",
         "id": 135473,
         "value": 1,
         "name": "Guela Doué",
@@ -913,6 +978,15 @@
         "flag_emoji": "🇺🇸",
         "team_name": "United States",
         "photo_target": "Folarin Balogun"
+      },
+      {
+        "kind": "player",
+        "id": 249786,
+        "value": 1,
+        "name": "Firas Al Brikan",
+        "flag_emoji": "🇸🇦",
+        "team_name": "Saudi Arabia",
+        "photo_target": "Firas Al Brikan"
       },
       {
         "kind": "player",
@@ -1401,9 +1475,27 @@
         "flag_emoji": "🇶🇦",
         "team_name": "Qatar",
         "photo_target": "Assim Madibo"
+      },
+      {
+        "kind": "player",
+        "id": 28614,
+        "value": 1,
+        "name": "Agustín Canobbio",
+        "flag_emoji": "🇺🇾",
+        "team_name": "Uruguay",
+        "photo_target": "Agustín Canobbio"
       }
     ],
     "Clean Sheets": [
+      {
+        "kind": "team",
+        "id": 760,
+        "value": 3,
+        "name": "Spain",
+        "flag_emoji": "🇪🇸",
+        "team_name": "Spain",
+        "photo_target": "Spain"
+      },
       {
         "kind": "team",
         "id": 769,
@@ -1412,15 +1504,6 @@
         "flag_emoji": "🇲🇽",
         "team_name": "Mexico",
         "photo_target": "Mexico"
-      },
-      {
-        "kind": "team",
-        "id": 760,
-        "value": 2,
-        "name": "Spain",
-        "flag_emoji": "🇪🇸",
-        "team_name": "Spain",
-        "photo_target": "Spain"
       },
       {
         "kind": "team",
@@ -1448,6 +1531,15 @@
         "flag_emoji": "🇬🇭",
         "team_name": "Ghana",
         "photo_target": "Ghana"
+      },
+      {
+        "kind": "team",
+        "id": 1930,
+        "value": 2,
+        "name": "Cape Verde Islands",
+        "flag_emoji": "🇨🇻",
+        "team_name": "Cape Verde Islands",
+        "photo_target": "Cape Verde Islands"
       },
       {
         "kind": "team",
@@ -1511,6 +1603,15 @@
         "flag_emoji": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
         "team_name": "Scotland",
         "photo_target": "Scotland"
+      },
+      {
+        "kind": "team",
+        "id": 801,
+        "value": 1,
+        "name": "Saudi Arabia",
+        "flag_emoji": "🇸🇦",
+        "team_name": "Saudi Arabia",
+        "photo_target": "Saudi Arabia"
       },
       {
         "kind": "team",
@@ -1601,15 +1702,6 @@
         "flag_emoji": "🇨🇴",
         "team_name": "Colombia",
         "photo_target": "Colombia"
-      },
-      {
-        "kind": "team",
-        "id": 1930,
-        "value": 1,
-        "name": "Cape Verde Islands",
-        "flag_emoji": "🇨🇻",
-        "team_name": "Cape Verde Islands",
-        "photo_target": "Cape Verde Islands"
       },
       {
         "kind": "team",
