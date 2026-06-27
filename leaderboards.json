@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-06-27T04:16:10Z",
+  "generated_at": "2026-06-27T07:30:14Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -43,6 +43,8 @@
     537364,
     537365,
     537366,
+    537367,
+    537368,
     537369,
     537370,
     537371,
@@ -90,12 +92,30 @@
       },
       {
         "kind": "player",
+        "id": 3821,
+        "value": 2,
+        "name": "Saeid Ezatolahi",
+        "flag_emoji": "🇮🇷",
+        "team_name": "Iran",
+        "photo_target": "Saeid Ezatolahi"
+      },
+      {
+        "kind": "player",
         "id": 178769,
         "value": 2,
         "name": "Renato Veiga",
         "flag_emoji": "🇵🇹",
         "team_name": "Portugal",
         "photo_target": "Renato Veiga"
+      },
+      {
+        "kind": "player",
+        "id": 245550,
+        "value": 2,
+        "name": "Mohanad Lashin",
+        "flag_emoji": "🇪🇬",
+        "team_name": "Egypt",
+        "photo_target": "Mohanad Lashin"
       },
       {
         "kind": "player",
@@ -168,6 +188,15 @@
         "flag_emoji": "🇹🇷",
         "team_name": "Turkey",
         "photo_target": "Yunus Akgün"
+      },
+      {
+        "kind": "player",
+        "id": 245519,
+        "value": 1,
+        "name": "Yasser Ibrahim",
+        "flag_emoji": "🇪🇬",
+        "team_name": "Egypt",
+        "photo_target": "Yasser Ibrahim"
       },
       {
         "kind": "player",
@@ -252,6 +281,15 @@
       },
       {
         "kind": "player",
+        "id": 231889,
+        "value": 1,
+        "name": "Shojae Khalilzadeh",
+        "flag_emoji": "🇮🇷",
+        "team_name": "Iran",
+        "photo_target": "Shojae Khalilzadeh"
+      },
+      {
+        "kind": "player",
         "id": 49097,
         "value": 1,
         "name": "Shogo Taniguchi",
@@ -312,15 +350,6 @@
         "flag_emoji": "🇸🇦",
         "team_name": "Saudi Arabia",
         "photo_target": "Salem Al Dawsari"
-      },
-      {
-        "kind": "player",
-        "id": 3821,
-        "value": 1,
-        "name": "Saeid Ezatolahi",
-        "flag_emoji": "🇮🇷",
-        "team_name": "Iran",
-        "photo_target": "Saeid Ezatolahi"
       },
       {
         "kind": "player",
@@ -486,15 +515,6 @@
       },
       {
         "kind": "player",
-        "id": 245550,
-        "value": 1,
-        "name": "Mohanad Lashin",
-        "flag_emoji": "🇪🇬",
-        "team_name": "Egypt",
-        "photo_target": "Mohanad Lashin"
-      },
-      {
-        "kind": "player",
         "id": 248783,
         "value": 1,
         "name": "Mohammed Kanno",
@@ -576,12 +596,30 @@
       },
       {
         "kind": "player",
+        "id": 156513,
+        "value": 1,
+        "name": "Marko Stamenic",
+        "flag_emoji": "🇳🇿",
+        "team_name": "New Zealand",
+        "photo_target": "Marko Stamenic"
+      },
+      {
+        "kind": "player",
         "id": 9551,
         "value": 1,
         "name": "Marcel Sabitzer",
         "flag_emoji": "🇦🇹",
         "team_name": "Austria",
         "photo_target": "Marcel Sabitzer"
+      },
+      {
+        "kind": "player",
+        "id": 261012,
+        "value": 1,
+        "name": "Mahmoud Saber",
+        "flag_emoji": "🇪🇬",
+        "team_name": "Egypt",
+        "photo_target": "Mahmoud Saber"
       },
       {
         "kind": "player",
@@ -873,6 +911,15 @@
       },
       {
         "kind": "player",
+        "id": 231884,
+        "value": 1,
+        "name": "Hossein Kanaanizadegan",
+        "flag_emoji": "🇮🇷",
+        "team_name": "Iran",
+        "photo_target": "Hossein Kanaanizadegan"
+      },
+      {
+        "kind": "player",
         "id": 11636,
         "value": 1,
         "name": "Harry Souttar",
@@ -1041,6 +1088,15 @@
         "flag_emoji": "🇧🇦",
         "team_name": "Bosnia-Herzegovina",
         "photo_target": "Ermedin Demirovic"
+      },
+      {
+        "kind": "player",
+        "id": 118981,
+        "value": 1,
+        "name": "Elijah Just",
+        "flag_emoji": "🇳🇿",
+        "team_name": "New Zealand",
+        "photo_target": "Elijah Just"
       },
       {
         "kind": "player",
@@ -1311,6 +1367,15 @@
         "flag_emoji": "🇨🇦",
         "team_name": "Canada",
         "photo_target": "Alistair Johnston"
+      },
+      {
+        "kind": "player",
+        "id": 295339,
+        "value": 1,
+        "name": "Ali Nemati",
+        "flag_emoji": "🇮🇷",
+        "team_name": "Iran",
+        "photo_target": "Ali Nemati"
       },
       {
         "kind": "player",
