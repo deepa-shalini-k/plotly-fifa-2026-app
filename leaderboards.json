@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-06-28T20:01:15Z",
+  "generated_at": "2026-06-28T21:15:39Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -74,7 +74,8 @@
     537411,
     537412,
     537413,
-    537414
+    537414,
+    537417
   ],
   "metrics": {
     "Yellow Cards": [
@@ -536,6 +537,15 @@
         "flag_emoji": "🇧🇦",
         "team_name": "Bosnia-Herzegovina",
         "photo_target": "Nikola Katić"
+      },
+      {
+        "kind": "player",
+        "id": 216809,
+        "value": 1,
+        "name": "Niko Sigur",
+        "flag_emoji": "🇨🇦",
+        "team_name": "Canada",
+        "photo_target": "Niko Sigur"
       },
       {
         "kind": "player",
@@ -1767,6 +1777,15 @@
       },
       {
         "kind": "team",
+        "id": 828,
+        "value": 2,
+        "name": "Canada",
+        "flag_emoji": "🇨🇦",
+        "team_name": "Canada",
+        "photo_target": "Canada"
+      },
+      {
+        "kind": "team",
         "id": 764,
         "value": 2,
         "name": "Brazil",
@@ -1899,15 +1918,6 @@
         "flag_emoji": "🇭🇷",
         "team_name": "Croatia",
         "photo_target": "Croatia"
-      },
-      {
-        "kind": "team",
-        "id": 828,
-        "value": 1,
-        "name": "Canada",
-        "flag_emoji": "🇨🇦",
-        "team_name": "Canada",
-        "photo_target": "Canada"
       },
       {
         "kind": "team",
