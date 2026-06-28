@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-06-28T01:55:17Z",
+  "generated_at": "2026-06-28T06:20:13Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -61,6 +61,8 @@
     537398,
     537399,
     537400,
+    537401,
+    537402,
     537403,
     537404,
     537405,
@@ -201,6 +203,15 @@
         "flag_emoji": "🇹🇷",
         "team_name": "Turkey",
         "photo_target": "Yunus Akgün"
+      },
+      {
+        "kind": "player",
+        "id": 119303,
+        "value": 1,
+        "name": "Yazan Al Arab",
+        "flag_emoji": "🇯🇴",
+        "team_name": "Jordan",
+        "photo_target": "Yazan Al Arab"
       },
       {
         "kind": "player",
@@ -564,12 +575,30 @@
       },
       {
         "kind": "player",
+        "id": 244346,
+        "value": 1,
+        "name": "Mohannad Abu Taha",
+        "flag_emoji": "🇯🇴",
+        "team_name": "Jordan",
+        "photo_target": "Mohannad Abu Taha"
+      },
+      {
+        "kind": "player",
         "id": 248783,
         "value": 1,
         "name": "Mohammed Kanno",
         "flag_emoji": "🇸🇦",
         "team_name": "Saudi Arabia",
         "photo_target": "Mohammed Kanno"
+      },
+      {
+        "kind": "player",
+        "id": 249762,
+        "value": 1,
+        "name": "Mohammad Abu Zrayq",
+        "flag_emoji": "🇯🇴",
+        "team_name": "Jordan",
+        "photo_target": "Mohammad Abu Zrayq"
       },
       {
         "kind": "player",
@@ -651,6 +680,15 @@
         "flag_emoji": "🇳🇿",
         "team_name": "New Zealand",
         "photo_target": "Marko Stamenic"
+      },
+      {
+        "kind": "player",
+        "id": 8223,
+        "value": 1,
+        "name": "Marko Arnautovic",
+        "flag_emoji": "🇦🇹",
+        "team_name": "Austria",
+        "photo_target": "Marko Arnautovic"
       },
       {
         "kind": "player",
