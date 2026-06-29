@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-06-29T18:24:13Z",
+  "generated_at": "2026-06-29T20:23:57Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -75,7 +75,8 @@
     537412,
     537413,
     537414,
-    537417
+    537417,
+    537423
   ],
   "metrics": {
     "Yellow Cards": [
@@ -141,6 +142,24 @@
         "flag_emoji": "🇵🇾",
         "team_name": "Paraguay",
         "photo_target": "Diego Gómez"
+      },
+      {
+        "kind": "player",
+        "id": 7881,
+        "value": 2,
+        "name": "Danilo Luiz da Silva",
+        "flag_emoji": "🇧🇷",
+        "team_name": "Brazil",
+        "photo_target": "Danilo Luiz da Silva"
+      },
+      {
+        "kind": "player",
+        "id": 3231,
+        "value": 2,
+        "name": "Casemiro",
+        "flag_emoji": "🇧🇷",
+        "team_name": "Brazil",
+        "photo_target": "Casemiro"
       },
       {
         "kind": "player",
@@ -828,6 +847,15 @@
       },
       {
         "kind": "player",
+        "id": 114809,
+        "value": 1,
+        "name": "Kaishu Sano",
+        "flag_emoji": "🇯🇵",
+        "team_name": "Japan",
+        "photo_target": "Kaishu Sano"
+      },
+      {
+        "kind": "player",
         "id": 8395,
         "value": 1,
         "name": "Júnior Alonso",
@@ -843,6 +871,15 @@
         "flag_emoji": "🇨🇼",
         "team_name": "Curaçao",
         "photo_target": "Juriën Gaari"
+      },
+      {
+        "kind": "player",
+        "id": 181210,
+        "value": 1,
+        "name": "Junnosuke Suzuki",
+        "flag_emoji": "🇯🇵",
+        "team_name": "Japan",
+        "photo_target": "Junnosuke Suzuki"
       },
       {
         "kind": "player",
@@ -1332,12 +1369,12 @@
       },
       {
         "kind": "player",
-        "id": 7881,
+        "id": 6716,
         "value": 1,
-        "name": "Danilo Luiz da Silva",
-        "flag_emoji": "🇧🇷",
-        "team_name": "Brazil",
-        "photo_target": "Danilo Luiz da Silva"
+        "name": "Daichi Kamada",
+        "flag_emoji": "🇯🇵",
+        "team_name": "Japan",
+        "photo_target": "Daichi Kamada"
       },
       {
         "kind": "player",
@@ -1392,15 +1429,6 @@
         "flag_emoji": "🇨🇩",
         "team_name": "Congo DR",
         "photo_target": "Chancel Mbemba"
-      },
-      {
-        "kind": "player",
-        "id": 3231,
-        "value": 1,
-        "name": "Casemiro",
-        "flag_emoji": "🇧🇷",
-        "team_name": "Brazil",
-        "photo_target": "Casemiro"
       },
       {
         "kind": "player",
