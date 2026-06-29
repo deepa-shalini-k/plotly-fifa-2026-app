@@ -4,7 +4,7 @@ from dash import dcc
 import dash_mantine_components as dmc
 from dash_iconify import DashIconify
 
-from components.match_formatting import live_minute_label
+from components.match_formatting import live_minute_label, match_context_label
 from components.pitch import draw_pitch
 from data.pitch_utils import GRAPH_CONFIG
 
@@ -173,7 +173,7 @@ def _match_header(match: dict):
                 dmc.Stack(
                     [
                         _match_status_badge(match),
-                        dmc.Text(f"{match.get('group', '').replace('_', ' ')} · {match.get('venue', 'Venue TBC')}", c="#7A8099"),
+                        dmc.Text(match_context_label(match), c="#7A8099"),
                     ],
                     gap="xs",
                     align="flex-end",
