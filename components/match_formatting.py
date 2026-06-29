@@ -23,3 +23,19 @@ def live_minute_label(match: dict, pad_numeric: bool = False) -> str | None:
         return None
 
     return f"{minute_value:02d}'" if pad_numeric else f"{minute_value}'"
+
+
+def match_venue_label(match: dict, fallback: str = "Venue TBC") -> str:
+    venue = match.get("venue")
+    if venue is None:
+        return fallback
+
+    venue_text = str(venue).strip()
+    return venue_text or fallback
+
+
+def match_context_label(match: dict) -> str:
+    group_value = match.get("group")
+    group_label = str(group_value).replace("_", " ").strip() if group_value else ""
+    venue_label = match_venue_label(match)
+    return f"{group_label} · {venue_label}" if group_label else venue_label
