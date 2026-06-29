@@ -5,7 +5,7 @@ import dash_mantine_components as dmc
 
 from components.loading import build_loading_block
 from components.local_time import render_local_time
-from components.match_formatting import live_minute_label
+from components.match_formatting import live_minute_label, match_venue_label
 from components.match_centre_view import render_match_centre
 from data import api
 
@@ -61,7 +61,7 @@ def _match_link_card(match: dict, eyebrow: str, badge=None):
                     justify="space-between",
                     wrap="wrap",
                 ),
-                dmc.Text([_format_kickoff(match), f" · {match.get('venue', 'Venue TBC')}"], c="#7A8099"),
+                dmc.Text([_format_kickoff(match), f" · {match_venue_label(match)}"], c="#7A8099"),
             ],
             gap="sm",
         ),
