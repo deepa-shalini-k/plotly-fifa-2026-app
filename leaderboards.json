@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-06-29T22:46:39Z",
+  "generated_at": "2026-06-29T23:46:12Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -75,6 +75,7 @@
     537412,
     537413,
     537414,
+    537415,
     537417,
     537423
   ],
@@ -124,6 +125,24 @@
         "flag_emoji": "🇪🇬",
         "team_name": "Egypt",
         "photo_target": "Mohanad Lashin"
+      },
+      {
+        "kind": "player",
+        "id": 76861,
+        "value": 2,
+        "name": "Miguel Almirón",
+        "flag_emoji": "🇵🇾",
+        "team_name": "Paraguay",
+        "photo_target": "Miguel Almirón"
+      },
+      {
+        "kind": "player",
+        "id": 165622,
+        "value": 2,
+        "name": "Matías Galarza",
+        "flag_emoji": "🇵🇾",
+        "team_name": "Paraguay",
+        "photo_target": "Matías Galarza"
       },
       {
         "kind": "player",
@@ -640,15 +659,6 @@
       },
       {
         "kind": "player",
-        "id": 76861,
-        "value": 1,
-        "name": "Miguel Almirón",
-        "flag_emoji": "🇵🇾",
-        "team_name": "Paraguay",
-        "photo_target": "Miguel Almirón"
-      },
-      {
-        "kind": "player",
         "id": 131177,
         "value": 1,
         "name": "Mickey van de Ven",
@@ -673,15 +683,6 @@
         "flag_emoji": "🇧🇪",
         "team_name": "Belgium",
         "photo_target": "Maxim De Cuyper"
-      },
-      {
-        "kind": "player",
-        "id": 165622,
-        "value": 1,
-        "name": "Matías Galarza",
-        "flag_emoji": "🇵🇾",
-        "team_name": "Paraguay",
-        "photo_target": "Matías Galarza"
       },
       {
         "kind": "player",
@@ -856,6 +857,15 @@
       },
       {
         "kind": "player",
+        "id": 171,
+        "value": 1,
+        "name": "Kai Havertz",
+        "flag_emoji": "🇩🇪",
+        "team_name": "Germany",
+        "photo_target": "Kai Havertz"
+      },
+      {
+        "kind": "player",
         "id": 8395,
         "value": 1,
         "name": "Júnior Alonso",
@@ -1006,6 +1016,15 @@
         "flag_emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
         "team_name": "England",
         "photo_target": "Jarell Quansah"
+      },
+      {
+        "kind": "player",
+        "id": 144393,
+        "value": 1,
+        "name": "Jamal Musiala",
+        "flag_emoji": "🇩🇪",
+        "team_name": "Germany",
+        "photo_target": "Jamal Musiala"
       },
       {
         "kind": "player",
@@ -1510,6 +1529,15 @@
         "flag_emoji": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
         "team_name": "Scotland",
         "photo_target": "Anthony Ralston"
+      },
+      {
+        "kind": "player",
+        "id": 46467,
+        "value": 1,
+        "name": "Andrés Cubas",
+        "flag_emoji": "🇵🇾",
+        "team_name": "Paraguay",
+        "photo_target": "Andrés Cubas"
       },
       {
         "kind": "player",
