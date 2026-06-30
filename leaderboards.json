@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-06-30T17:14:38Z",
+  "generated_at": "2026-06-30T19:11:01Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -78,7 +78,8 @@
     537415,
     537417,
     537418,
-    537423
+    537423,
+    537424
   ],
   "metrics": {
     "Yellow Cards": [
@@ -1521,6 +1522,15 @@
         "flag_emoji": "🇿🇦",
         "team_name": "South Africa",
         "photo_target": "Aubrey Modiba"
+      },
+      {
+        "kind": "player",
+        "id": 169295,
+        "value": 1,
+        "name": "Antonio Nusa",
+        "flag_emoji": "🇳🇴",
+        "team_name": "Norway",
+        "photo_target": "Antonio Nusa"
       },
       {
         "kind": "player",
