@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-06-30T22:37:10Z",
+  "generated_at": "2026-06-30T23:48:48Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -76,6 +76,7 @@
     537413,
     537414,
     537415,
+    537416,
     537417,
     537418,
     537423,
@@ -1817,6 +1818,15 @@
       },
       {
         "kind": "team",
+        "id": 773,
+        "value": 2,
+        "name": "France",
+        "flag_emoji": "🇫🇷",
+        "team_name": "France",
+        "photo_target": "France"
+      },
+      {
+        "kind": "team",
         "id": 770,
         "value": 2,
         "name": "England",
@@ -1949,15 +1959,6 @@
         "flag_emoji": "🇮🇷",
         "team_name": "Iran",
         "photo_target": "Iran"
-      },
-      {
-        "kind": "team",
-        "id": 773,
-        "value": 1,
-        "name": "France",
-        "flag_emoji": "🇫🇷",
-        "team_name": "France",
-        "photo_target": "France"
       },
       {
         "kind": "team",
