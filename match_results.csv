@@ -151,7 +151,9 @@ match_date,team,opponent,team_score,opponent_score,tournament,elo_change,new_elo
 2026-06-29,Morocco,Netherlands,4,3,World Cup,39,1916,7,10,C
 2026-06-29,Netherlands,Morocco,3,4,World Cup,-39,1941,0,8,F
 2026-06-29,Paraguay,Germany,5,4,World Cup,38,1853,4,20,D
+2026-06-30,Ecuador,Mexico,0,2,World Cup,-31,1871,-4,18,E
 2026-06-30,France,Sweden,3,0,World Cup,11,2134,0,3,I
 2026-06-30,Ivory Coast,Norway,1,2,World Cup,-16,1727,-3,39,E
+2026-06-30,Mexico,Ecuador,2,0,World Cup,31,1943,4,8,A
 2026-06-30,Norway,Ivory Coast,2,1,World Cup,16,1934,0,9,I
 2026-06-30,Sweden,France,0,3,World Cup,-11,1731,-2,38,F

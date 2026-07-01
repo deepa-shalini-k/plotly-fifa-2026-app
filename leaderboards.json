@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-07-01T01:59:35Z",
+  "generated_at": "2026-07-01T06:42:48Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -80,7 +80,8 @@
     537417,
     537418,
     537423,
-    537424
+    537424,
+    537425
   ],
   "metrics": {
     "Yellow Cards": [
@@ -200,6 +201,15 @@
         "flag_emoji": "🇮🇶",
         "team_name": "Iraq",
         "photo_target": "Amir Al Ammari"
+      },
+      {
+        "kind": "player",
+        "id": 24670,
+        "value": 2,
+        "name": "Alan Franco",
+        "flag_emoji": "🇪🇨",
+        "team_name": "Ecuador",
+        "photo_target": "Alan Franco"
       },
       {
         "kind": "player",
@@ -482,6 +492,15 @@
       },
       {
         "kind": "player",
+        "id": 205684,
+        "value": 1,
+        "name": "Ray Paez",
+        "flag_emoji": "🇪🇨",
+        "team_name": "Ecuador",
+        "photo_target": "Ray Paez"
+      },
+      {
+        "kind": "player",
         "id": 6657,
         "value": 1,
         "name": "Rani Khedira",
@@ -632,6 +651,15 @@
         "flag_emoji": "🇸🇦",
         "team_name": "Saudi Arabia",
         "photo_target": "Nasser Al Dawsari"
+      },
+      {
+        "kind": "player",
+        "id": 121103,
+        "value": 1,
+        "name": "Moisés Caicedo",
+        "flag_emoji": "🇪🇨",
+        "team_name": "Ecuador",
+        "photo_target": "Moisés Caicedo"
       },
       {
         "kind": "player",
@@ -1625,15 +1653,6 @@
       },
       {
         "kind": "player",
-        "id": 24670,
-        "value": 1,
-        "name": "Alan Franco",
-        "flag_emoji": "🇪🇨",
-        "team_name": "Ecuador",
-        "photo_target": "Alan Franco"
-      },
-      {
-        "kind": "player",
         "id": 245553,
         "value": 1,
         "name": "Ahmed El Fotouh",
@@ -1708,6 +1727,15 @@
       },
       {
         "kind": "player",
+        "id": 125674,
+        "value": 1,
+        "name": "Piero Hincapié",
+        "flag_emoji": "🇪🇨",
+        "team_name": "Ecuador",
+        "photo_target": "Piero Hincapié"
+      },
+      {
+        "kind": "player",
         "id": 192677,
         "value": 1,
         "name": "Nathan Ngoy",
@@ -1764,21 +1792,21 @@
     "Clean Sheets": [
       {
         "kind": "team",
+        "id": 769,
+        "value": 4,
+        "name": "Mexico",
+        "flag_emoji": "🇲🇽",
+        "team_name": "Mexico",
+        "photo_target": "Mexico"
+      },
+      {
+        "kind": "team",
         "id": 760,
         "value": 3,
         "name": "Spain",
         "flag_emoji": "🇪🇸",
         "team_name": "Spain",
         "photo_target": "Spain"
-      },
-      {
-        "kind": "team",
-        "id": 769,
-        "value": 3,
-        "name": "Mexico",
-        "flag_emoji": "🇲🇽",
-        "team_name": "Mexico",
-        "photo_target": "Mexico"
       },
       {
         "kind": "team",
