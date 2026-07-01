@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-07-01T16:03:13Z",
+  "generated_at": "2026-07-01T18:08:50Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -81,7 +81,8 @@
     537418,
     537423,
     537424,
-    537425
+    537425,
+    537426
   ],
   "metrics": {
     "Yellow Cards": [
@@ -120,6 +121,15 @@
         "flag_emoji": "🇵🇹",
         "team_name": "Portugal",
         "photo_target": "Renato Veiga"
+      },
+      {
+        "kind": "player",
+        "id": 182273,
+        "value": 2,
+        "name": "Noah Sadiki",
+        "flag_emoji": "🇨🇩",
+        "team_name": "Congo DR",
+        "photo_target": "Noah Sadiki"
       },
       {
         "kind": "player",
@@ -582,15 +592,6 @@
       },
       {
         "kind": "player",
-        "id": 182273,
-        "value": 1,
-        "name": "Noah Sadiki",
-        "flag_emoji": "🇨🇩",
-        "team_name": "Congo DR",
-        "photo_target": "Noah Sadiki"
-      },
-      {
-        "kind": "player",
         "id": 34481,
         "value": 1,
         "name": "Nkosinathi Sibisi",
@@ -930,6 +931,15 @@
         "flag_emoji": "🇯🇵",
         "team_name": "Japan",
         "photo_target": "Junnosuke Suzuki"
+      },
+      {
+        "kind": "player",
+        "id": 125010,
+        "value": 1,
+        "name": "Jude Bellingham",
+        "flag_emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+        "team_name": "England",
+        "photo_target": "Jude Bellingham"
       },
       {
         "kind": "player",
