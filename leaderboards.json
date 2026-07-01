@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-07-01T21:51:48Z",
+  "generated_at": "2026-07-01T23:05:09Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -79,6 +79,7 @@
     537416,
     537417,
     537418,
+    537422,
     537423,
     537424,
     537425,
@@ -472,6 +473,15 @@
         "flag_emoji": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
         "team_name": "Scotland",
         "photo_target": "Ryan Christie"
+      },
+      {
+        "kind": "player",
+        "id": 45094,
+        "value": 1,
+        "name": "Rudi Garcia",
+        "flag_emoji": "🇧🇪",
+        "team_name": "Belgium",
+        "photo_target": "Rudi Garcia"
       },
       {
         "kind": "player",
@@ -1534,6 +1544,15 @@
         "flag_emoji": "🇲🇽",
         "team_name": "Mexico",
         "photo_target": "Brian Gutiérrez"
+      },
+      {
+        "kind": "player",
+        "id": 8873,
+        "value": 1,
+        "name": "Brandon Mechele",
+        "flag_emoji": "🇧🇪",
+        "team_name": "Belgium",
+        "photo_target": "Brandon Mechele"
       },
       {
         "kind": "player",

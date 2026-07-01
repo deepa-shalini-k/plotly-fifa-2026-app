@@ -157,5 +157,7 @@ match_date,team,opponent,team_score,opponent_score,tournament,elo_change,new_elo
 2026-06-30,Mexico,Ecuador,2,0,World Cup,31,1943,4,8,A
 2026-06-30,Norway,Ivory Coast,2,1,World Cup,16,1934,0,9,I
 2026-06-30,Sweden,France,0,3,World Cup,-11,1731,-2,38,F
+2026-07-01,Belgium,Senegal,3,2,World Cup,26,1910,2,13,G
 2026-07-01,DR Congo,England,1,2,World Cup,-8,1704,-2,45,K
 2026-07-01,England,DR Congo,2,1,World Cup,8,2046,0,4,L
+2026-07-01,Senegal,Belgium,2,3,World Cup,-26,1816,-2,24,I
