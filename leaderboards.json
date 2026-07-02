@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-07-02T00:19:12Z",
+  "generated_at": "2026-07-02T04:35:39Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -79,6 +79,7 @@
     537416,
     537417,
     537418,
+    537421,
     537422,
     537423,
     537424,
@@ -368,6 +369,15 @@
       },
       {
         "kind": "player",
+        "id": 65758,
+        "value": 1,
+        "name": "Stjepan Radeljić",
+        "flag_emoji": "🇧🇦",
+        "team_name": "Bosnia-Herzegovina",
+        "photo_target": "Stjepan Radeljić"
+      },
+      {
+        "kind": "player",
         "id": 395,
         "value": 1,
         "name": "Stefan Posch",
@@ -410,6 +420,15 @@
         "flag_emoji": "🇰🇷",
         "team_name": "South Korea",
         "photo_target": "Seung-Ho Paik"
+      },
+      {
+        "kind": "player",
+        "id": 196807,
+        "value": 1,
+        "name": "Sergej Barbarez",
+        "flag_emoji": "🇧🇦",
+        "team_name": "Bosnia-Herzegovina",
+        "photo_target": "Sergej Barbarez"
       },
       {
         "kind": "player",
@@ -1792,6 +1811,15 @@
       },
       {
         "kind": "player",
+        "id": 131040,
+        "value": 1,
+        "name": "Folarin Balogun",
+        "flag_emoji": "🇺🇸",
+        "team_name": "United States",
+        "photo_target": "Folarin Balogun"
+      },
+      {
+        "kind": "player",
         "id": 39246,
         "value": 1,
         "name": "César Montes",
@@ -1836,6 +1864,15 @@
         "flag_emoji": "🇪🇸",
         "team_name": "Spain",
         "photo_target": "Spain"
+      },
+      {
+        "kind": "team",
+        "id": 771,
+        "value": 2,
+        "name": "United States",
+        "flag_emoji": "🇺🇸",
+        "team_name": "United States",
+        "photo_target": "United States"
       },
       {
         "kind": "team",
@@ -1944,15 +1981,6 @@
         "flag_emoji": "🇦🇷",
         "team_name": "Argentina",
         "photo_target": "Argentina"
-      },
-      {
-        "kind": "team",
-        "id": 771,
-        "value": 1,
-        "name": "United States",
-        "flag_emoji": "🇺🇸",
-        "team_name": "United States",
-        "photo_target": "United States"
       },
       {
         "kind": "team",
