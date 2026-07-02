@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-07-02T20:03:03Z",
+  "generated_at": "2026-07-02T21:21:05Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -79,6 +79,7 @@
     537416,
     537417,
     537418,
+    537420,
     537421,
     537422,
     537423,
@@ -96,6 +97,15 @@
         "flag_emoji": "🇿🇦",
         "team_name": "South Africa",
         "photo_target": "Teboho Mokoena"
+      },
+      {
+        "kind": "player",
+        "id": 395,
+        "value": 2,
+        "name": "Stefan Posch",
+        "flag_emoji": "🇦🇹",
+        "team_name": "Austria",
+        "photo_target": "Stefan Posch"
       },
       {
         "kind": "player",
@@ -375,15 +385,6 @@
         "flag_emoji": "🇧🇦",
         "team_name": "Bosnia-Herzegovina",
         "photo_target": "Stjepan Radeljić"
-      },
-      {
-        "kind": "player",
-        "id": 395,
-        "value": 1,
-        "name": "Stefan Posch",
-        "flag_emoji": "🇦🇹",
-        "team_name": "Austria",
-        "photo_target": "Stefan Posch"
       },
       {
         "kind": "player",
@@ -1849,21 +1850,21 @@
     "Clean Sheets": [
       {
         "kind": "team",
+        "id": 760,
+        "value": 4,
+        "name": "Spain",
+        "flag_emoji": "🇪🇸",
+        "team_name": "Spain",
+        "photo_target": "Spain"
+      },
+      {
+        "kind": "team",
         "id": 769,
         "value": 4,
         "name": "Mexico",
         "flag_emoji": "🇲🇽",
         "team_name": "Mexico",
         "photo_target": "Mexico"
-      },
-      {
-        "kind": "team",
-        "id": 760,
-        "value": 3,
-        "name": "Spain",
-        "flag_emoji": "🇪🇸",
-        "team_name": "Spain",
-        "photo_target": "Spain"
       },
       {
         "kind": "team",
