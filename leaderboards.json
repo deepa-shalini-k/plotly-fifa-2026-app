@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-07-02T23:43:11Z",
+  "generated_at": "2026-07-03T01:19:45Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -79,6 +79,7 @@
     537416,
     537417,
     537418,
+    537419,
     537420,
     537421,
     537422,
@@ -178,6 +179,15 @@
         "flag_emoji": "🇨🇼",
         "team_name": "Curaçao",
         "photo_target": "Juninho Bacuna"
+      },
+      {
+        "kind": "player",
+        "id": 2004,
+        "value": 2,
+        "name": "Ivan Perišić",
+        "flag_emoji": "🇭🇷",
+        "team_name": "Croatia",
+        "photo_target": "Ivan Perišić"
       },
       {
         "kind": "player",
@@ -484,6 +494,15 @@
         "flag_emoji": "🇸🇦",
         "team_name": "Saudi Arabia",
         "photo_target": "Salem Al Dawsari"
+      },
+      {
+        "kind": "player",
+        "id": 10183,
+        "value": 1,
+        "name": "Rúben Dias",
+        "flag_emoji": "🇵🇹",
+        "team_name": "Portugal",
+        "photo_target": "Rúben Dias"
       },
       {
         "kind": "player",
@@ -820,6 +839,15 @@
       },
       {
         "kind": "player",
+        "id": 43,
+        "value": 1,
+        "name": "Luka Modrić",
+        "flag_emoji": "🇭🇷",
+        "team_name": "Croatia",
+        "photo_target": "Luka Modrić"
+      },
+      {
+        "kind": "player",
         "id": 193622,
         "value": 1,
         "name": "Lucas Bergvall",
@@ -1141,15 +1169,6 @@
         "flag_emoji": "🇬🇭",
         "team_name": "Ghana",
         "photo_target": "Iñaki Williams"
-      },
-      {
-        "kind": "player",
-        "id": 2004,
-        "value": 1,
-        "name": "Ivan Perišić",
-        "flag_emoji": "🇭🇷",
-        "team_name": "Croatia",
-        "photo_target": "Ivan Perišić"
       },
       {
         "kind": "player",
