@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-07-03T01:19:45Z",
+  "generated_at": "2026-07-03T05:04:36Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -86,7 +86,8 @@
     537423,
     537424,
     537425,
-    537426
+    537426,
+    537429
   ],
   "metrics": {
     "Yellow Cards": [
@@ -1199,6 +1200,15 @@
       },
       {
         "kind": "player",
+        "id": 123508,
+        "value": 1,
+        "name": "Hicham Boudaoui",
+        "flag_emoji": "🇩🇿",
+        "team_name": "Algeria",
+        "photo_target": "Hicham Boudaoui"
+      },
+      {
+        "kind": "player",
         "id": 11636,
         "value": 1,
         "name": "Harry Souttar",
@@ -1331,6 +1341,15 @@
         "flag_emoji": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
         "team_name": "Scotland",
         "photo_target": "Findlay Curtis"
+      },
+      {
+        "kind": "player",
+        "id": 178658,
+        "value": 1,
+        "name": "Fares Chaïbi",
+        "flag_emoji": "🇩🇿",
+        "team_name": "Algeria",
+        "photo_target": "Fares Chaïbi"
       },
       {
         "kind": "player",
@@ -2001,6 +2020,15 @@
         "flag_emoji": "🇦🇷",
         "team_name": "Argentina",
         "photo_target": "Argentina"
+      },
+      {
+        "kind": "team",
+        "id": 788,
+        "value": 1,
+        "name": "Switzerland",
+        "flag_emoji": "🇨🇭",
+        "team_name": "Switzerland",
+        "photo_target": "Switzerland"
       },
       {
         "kind": "team",

@@ -163,7 +163,9 @@ match_date,team,opponent,team_score,opponent_score,tournament,elo_change,new_elo
 2026-07-01,England,DR Congo,2,1,World Cup,8,2046,0,4,L
 2026-07-01,Senegal,Belgium,2,3,World Cup,-26,1816,-2,24,I
 2026-07-01,USA,Bosnia and Herzegovina,2,0,World Cup,17,1798,1,26,D
+2026-07-02,Algeria,Switzerland,0,2,World Cup,-29,1756,-5,32,J
 2026-07-02,Austria,Spain,0,3,World Cup,-15,1821,0,23,J
 2026-07-02,Croatia,Portugal,1,2,World Cup,-23,1882,-1,15,L
 2026-07-02,Portugal,Croatia,2,1,World Cup,23,2013,1,6,K
 2026-07-02,Spain,Austria,3,0,World Cup,15,2159,1,1,H
+2026-07-02,Switzerland,Algeria,2,0,World Cup,29,1943,4,8,B
