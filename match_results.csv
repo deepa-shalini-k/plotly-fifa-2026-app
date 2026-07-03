@@ -169,3 +169,5 @@ match_date,team,opponent,team_score,opponent_score,tournament,elo_change,new_elo
 2026-07-02,Portugal,Croatia,2,1,World Cup,23,2013,1,6,K
 2026-07-02,Spain,Austria,3,0,World Cup,15,2159,1,1,H
 2026-07-02,Switzerland,Algeria,2,0,World Cup,29,1943,4,8,B
+2026-07-03,Australia,Egypt,3,5,World Cup,-52,1748,-9,34,D
+2026-07-03,Egypt,Australia,5,3,World Cup,52,1794,10,26,G
