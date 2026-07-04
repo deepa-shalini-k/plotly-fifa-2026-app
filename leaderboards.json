@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-07-04T18:44:37Z",
+  "generated_at": "2026-07-04T19:59:23Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -51,6 +51,7 @@
     537372,
     537373,
     537374,
+    537376,
     537391,
     537392,
     537393,
@@ -186,6 +187,15 @@
       },
       {
         "kind": "player",
+        "id": 217596,
+        "value": 2,
+        "name": "Luc De Fougerolles",
+        "flag_emoji": "🇨🇦",
+        "team_name": "Canada",
+        "photo_target": "Luc De Fougerolles"
+      },
+      {
+        "kind": "player",
         "id": 7518,
         "value": 2,
         "name": "Juninho Bacuna",
@@ -228,6 +238,15 @@
         "flag_emoji": "🇧🇷",
         "team_name": "Brazil",
         "photo_target": "Danilo Luiz da Silva"
+      },
+      {
+        "kind": "player",
+        "id": 15958,
+        "value": 2,
+        "name": "Cyle Larin",
+        "flag_emoji": "🇨🇦",
+        "team_name": "Canada",
+        "photo_target": "Cyle Larin"
       },
       {
         "kind": "player",
@@ -564,12 +583,30 @@
       },
       {
         "kind": "player",
+        "id": 77691,
+        "value": 1,
+        "name": "Richie Laryea",
+        "flag_emoji": "🇨🇦",
+        "team_name": "Canada",
+        "photo_target": "Richie Laryea"
+      },
+      {
+        "kind": "player",
         "id": 170657,
         "value": 1,
         "name": "Richard Rios",
         "flag_emoji": "🇨🇴",
         "team_name": "Colombia",
         "photo_target": "Richard Rios"
+      },
+      {
+        "kind": "player",
+        "id": 172822,
+        "value": 1,
+        "name": "Redouane Halhal",
+        "flag_emoji": "🇲🇦",
+        "team_name": "Morocco",
+        "photo_target": "Redouane Halhal"
       },
       {
         "kind": "player",
@@ -879,15 +916,6 @@
       },
       {
         "kind": "player",
-        "id": 217596,
-        "value": 1,
-        "name": "Luc De Fougerolles",
-        "flag_emoji": "🇨🇦",
-        "team_name": "Canada",
-        "photo_target": "Luc De Fougerolles"
-      },
-      {
-        "kind": "player",
         "id": 166156,
         "value": 1,
         "name": "Livano Comenencia",
@@ -1092,6 +1120,15 @@
         "flag_emoji": "🇦🇺",
         "team_name": "Australia",
         "photo_target": "Jordan Bos"
+      },
+      {
+        "kind": "player",
+        "id": 8924,
+        "value": 1,
+        "name": "Jonathan David",
+        "flag_emoji": "🇨🇦",
+        "team_name": "Canada",
+        "photo_target": "Jonathan David"
       },
       {
         "kind": "player",
@@ -1572,15 +1609,6 @@
       },
       {
         "kind": "player",
-        "id": 15958,
-        "value": 1,
-        "name": "Cyle Larin",
-        "flag_emoji": "🇨🇦",
-        "team_name": "Canada",
-        "photo_target": "Cyle Larin"
-      },
-      {
-        "kind": "player",
         "id": 102193,
         "value": 1,
         "name": "Crysencio Summerville",
@@ -1662,12 +1690,30 @@
       },
       {
         "kind": "player",
+        "id": 189873,
+        "value": 1,
+        "name": "Bilal El Khannouss",
+        "flag_emoji": "🇲🇦",
+        "team_name": "Morocco",
+        "photo_target": "Bilal El Khannouss"
+      },
+      {
+        "kind": "player",
         "id": 3254,
         "value": 1,
         "name": "Bernardo Silva",
         "flag_emoji": "🇵🇹",
         "team_name": "Portugal",
         "photo_target": "Bernardo Silva"
+      },
+      {
+        "kind": "player",
+        "id": 122511,
+        "value": 1,
+        "name": "Azzedine Ounahi",
+        "flag_emoji": "🇲🇦",
+        "team_name": "Morocco",
+        "photo_target": "Azzedine Ounahi"
       },
       {
         "kind": "player",
@@ -1803,6 +1849,15 @@
         "flag_emoji": "🇪🇬",
         "team_name": "Egypt",
         "photo_target": "Ahmed El Fotouh"
+      },
+      {
+        "kind": "player",
+        "id": 53,
+        "value": 1,
+        "name": "Achraf Hakimi",
+        "flag_emoji": "🇲🇦",
+        "team_name": "Morocco",
+        "photo_target": "Achraf Hakimi"
       },
       {
         "kind": "player",
@@ -2008,6 +2063,15 @@
       },
       {
         "kind": "team",
+        "id": 815,
+        "value": 2,
+        "name": "Morocco",
+        "flag_emoji": "🇲🇦",
+        "team_name": "Morocco",
+        "photo_target": "Morocco"
+      },
+      {
+        "kind": "team",
         "id": 1935,
         "value": 2,
         "name": "Ivory Coast",
@@ -2131,15 +2195,6 @@
         "flag_emoji": "🇸🇦",
         "team_name": "Saudi Arabia",
         "photo_target": "Saudi Arabia"
-      },
-      {
-        "kind": "team",
-        "id": 815,
-        "value": 1,
-        "name": "Morocco",
-        "flag_emoji": "🇲🇦",
-        "team_name": "Morocco",
-        "photo_target": "Morocco"
       },
       {
         "kind": "team",

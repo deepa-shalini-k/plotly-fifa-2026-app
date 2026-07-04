@@ -175,3 +175,5 @@ match_date,team,opponent,team_score,opponent_score,tournament,elo_change,new_elo
 2026-07-03,Colombia,Ghana,1,0,World Cup,5,2009,0,7,K
 2026-07-03,Egypt,Australia,5,3,World Cup,52,1794,10,26,G
 2026-07-03,Ghana,Colombia,0,1,World Cup,-5,1570,-1,69,L
+2026-07-04,Canada,Morocco,0,3,World Cup,-31,1733,-8,37,B
+2026-07-04,Morocco,Canada,3,0,World Cup,31,1947,4,8,C
