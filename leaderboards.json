@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-07-03T23:30:14Z",
+  "generated_at": "2026-07-04T01:11:13Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -87,6 +87,7 @@
     537424,
     537425,
     537426,
+    537427,
     537428,
     537429
   ],
@@ -931,6 +932,15 @@
       },
       {
         "kind": "player",
+        "id": 40121,
+        "value": 1,
+        "name": "Kevin Pina",
+        "flag_emoji": "🇨🇻",
+        "team_name": "Cape Verde Islands",
+        "photo_target": "Kevin Pina"
+      },
+      {
+        "kind": "player",
         "id": 34494,
         "value": 1,
         "name": "Kenny McLean",
@@ -1279,6 +1289,15 @@
         "flag_emoji": "🇪🇨",
         "team_name": "Ecuador",
         "photo_target": "Gonzalo Plata"
+      },
+      {
+        "kind": "player",
+        "id": 11667,
+        "value": 1,
+        "name": "Gonzalo Montiel",
+        "flag_emoji": "🇦🇷",
+        "team_name": "Argentina",
+        "photo_target": "Gonzalo Montiel"
       },
       {
         "kind": "player",
