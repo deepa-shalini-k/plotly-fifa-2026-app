@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-07-04T22:13:22Z",
+  "generated_at": "2026-07-04T23:15:55Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -51,6 +51,7 @@
     537372,
     537373,
     537374,
+    537375,
     537376,
     537391,
     537392,
@@ -817,6 +818,15 @@
       },
       {
         "kind": "player",
+        "id": 113765,
+        "value": 1,
+        "name": "Michael Olise",
+        "flag_emoji": "🇫🇷",
+        "team_name": "France",
+        "photo_target": "Michael Olise"
+      },
+      {
+        "kind": "player",
         "id": 8472,
         "value": 1,
         "name": "Memphis Depay",
@@ -877,6 +887,15 @@
         "flag_emoji": "🇦🇹",
         "team_name": "Austria",
         "photo_target": "Marcel Sabitzer"
+      },
+      {
+        "kind": "player",
+        "id": 102395,
+        "value": 1,
+        "name": "Manu Koné",
+        "flag_emoji": "🇫🇷",
+        "team_name": "France",
+        "photo_target": "Manu Koné"
       },
       {
         "kind": "player",
@@ -1690,6 +1709,15 @@
       },
       {
         "kind": "player",
+        "id": 172762,
+        "value": 1,
+        "name": "Bradley Barcola",
+        "flag_emoji": "🇫🇷",
+        "team_name": "France",
+        "photo_target": "Bradley Barcola"
+      },
+      {
+        "kind": "player",
         "id": 189873,
         "value": 1,
         "name": "Bilal El Khannouss",
@@ -2027,6 +2055,15 @@
       },
       {
         "kind": "team",
+        "id": 773,
+        "value": 3,
+        "name": "France",
+        "flag_emoji": "🇫🇷",
+        "team_name": "France",
+        "photo_target": "France"
+      },
+      {
+        "kind": "team",
         "id": 818,
         "value": 3,
         "name": "Colombia",
@@ -2087,15 +2124,6 @@
         "flag_emoji": "🇬🇭",
         "team_name": "Ghana",
         "photo_target": "Ghana"
-      },
-      {
-        "kind": "team",
-        "id": 773,
-        "value": 2,
-        "name": "France",
-        "flag_emoji": "🇫🇷",
-        "team_name": "France",
-        "photo_target": "France"
       },
       {
         "kind": "team",
