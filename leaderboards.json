@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-07-04T01:11:13Z",
+  "generated_at": "2026-07-04T04:53:03Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -89,7 +89,8 @@
     537426,
     537427,
     537428,
-    537429
+    537429,
+    537430
   ],
   "metrics": {
     "Yellow Cards": [
@@ -236,6 +237,15 @@
         "flag_emoji": "🇧🇷",
         "team_name": "Brazil",
         "photo_target": "Casemiro"
+      },
+      {
+        "kind": "player",
+        "id": 262187,
+        "value": 2,
+        "name": "Caleb Yirenkyi",
+        "flag_emoji": "🇬🇭",
+        "team_name": "Ghana",
+        "photo_target": "Caleb Yirenkyi"
       },
       {
         "kind": "player",
@@ -551,6 +561,15 @@
         "flag_emoji": "🇺🇾",
         "team_name": "Uruguay",
         "photo_target": "Rodrigo Bentancur"
+      },
+      {
+        "kind": "player",
+        "id": 170657,
+        "value": 1,
+        "name": "Richard Rios",
+        "flag_emoji": "🇨🇴",
+        "team_name": "Colombia",
+        "photo_target": "Richard Rios"
       },
       {
         "kind": "player",
@@ -1103,6 +1122,15 @@
       },
       {
         "kind": "player",
+        "id": 22306,
+        "value": 1,
+        "name": "Jhon Arias",
+        "flag_emoji": "🇨🇴",
+        "team_name": "Colombia",
+        "photo_target": "Jhon Arias"
+      },
+      {
+        "kind": "player",
         "id": 3737,
         "value": 1,
         "name": "Jefferson Lerma",
@@ -1616,15 +1644,6 @@
       },
       {
         "kind": "player",
-        "id": 262187,
-        "value": 1,
-        "name": "Caleb Yirenkyi",
-        "flag_emoji": "🇬🇭",
-        "team_name": "Ghana",
-        "photo_target": "Caleb Yirenkyi"
-      },
-      {
-        "kind": "player",
         "id": 144457,
         "value": 1,
         "name": "Brian Gutiérrez",
@@ -1733,6 +1752,15 @@
       },
       {
         "kind": "player",
+        "id": 147893,
+        "value": 1,
+        "name": "Alidu Seidu",
+        "flag_emoji": "🇬🇭",
+        "team_name": "Ghana",
+        "photo_target": "Alidu Seidu"
+      },
+      {
+        "kind": "player",
         "id": 295339,
         "value": 1,
         "name": "Ali Nemati",
@@ -1784,6 +1812,15 @@
         "flag_emoji": "🇸🇦",
         "team_name": "Saudi Arabia",
         "photo_target": "Abdulelah Al Amri"
+      },
+      {
+        "kind": "player",
+        "id": 187162,
+        "value": 1,
+        "name": "Abdul Issahaku",
+        "flag_emoji": "🇬🇭",
+        "team_name": "Ghana",
+        "photo_target": "Abdul Issahaku"
       },
       {
         "kind": "player",
@@ -1935,6 +1972,15 @@
       },
       {
         "kind": "team",
+        "id": 818,
+        "value": 3,
+        "name": "Colombia",
+        "flag_emoji": "🇨🇴",
+        "team_name": "Colombia",
+        "photo_target": "Colombia"
+      },
+      {
+        "kind": "team",
         "id": 771,
         "value": 2,
         "name": "United States",
@@ -1995,15 +2041,6 @@
         "flag_emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
         "team_name": "England",
         "photo_target": "England"
-      },
-      {
-        "kind": "team",
-        "id": 818,
-        "value": 2,
-        "name": "Colombia",
-        "flag_emoji": "🇨🇴",
-        "team_name": "Colombia",
-        "photo_target": "Colombia"
       },
       {
         "kind": "team",
