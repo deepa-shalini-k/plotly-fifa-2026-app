@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-07-05T20:59:44Z",
+  "generated_at": "2026-07-05T22:10:51Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -53,6 +53,7 @@
     537374,
     537375,
     537376,
+    537377,
     537391,
     537392,
     537393,
@@ -743,6 +744,15 @@
         "flag_emoji": "🇨🇭",
         "team_name": "Switzerland",
         "photo_target": "Nico Elvedi"
+      },
+      {
+        "kind": "player",
+        "id": 8491,
+        "value": 1,
+        "name": "Neymar",
+        "flag_emoji": "🇧🇷",
+        "team_name": "Brazil",
+        "photo_target": "Neymar"
       },
       {
         "kind": "player",
