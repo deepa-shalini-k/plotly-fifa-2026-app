@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-07-06T20:32:12Z",
+  "generated_at": "2026-07-06T22:00:19Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -55,6 +55,7 @@
     537376,
     537377,
     537378,
+    537379,
     537391,
     537392,
     537393,
@@ -100,6 +101,15 @@
     "Yellow Cards": [
       {
         "kind": "player",
+        "id": 178769,
+        "value": 3,
+        "name": "Renato Veiga",
+        "flag_emoji": "🇵🇹",
+        "team_name": "Portugal",
+        "photo_target": "Renato Veiga"
+      },
+      {
+        "kind": "player",
         "id": 245519,
         "value": 2,
         "name": "Yasser Ibrahim",
@@ -142,15 +152,6 @@
         "flag_emoji": "🇮🇷",
         "team_name": "Iran",
         "photo_target": "Saeid Ezatolahi"
-      },
-      {
-        "kind": "player",
-        "id": 178769,
-        "value": 2,
-        "name": "Renato Veiga",
-        "flag_emoji": "🇵🇹",
-        "team_name": "Portugal",
-        "photo_target": "Renato Veiga"
       },
       {
         "kind": "player",
@@ -277,6 +278,15 @@
         "flag_emoji": "🇬🇭",
         "team_name": "Ghana",
         "photo_target": "Caleb Yirenkyi"
+      },
+      {
+        "kind": "player",
+        "id": 3254,
+        "value": 2,
+        "name": "Bernardo Silva",
+        "flag_emoji": "🇵🇹",
+        "team_name": "Portugal",
+        "photo_target": "Bernardo Silva"
       },
       {
         "kind": "player",
@@ -1783,15 +1793,6 @@
       },
       {
         "kind": "player",
-        "id": 3254,
-        "value": 1,
-        "name": "Bernardo Silva",
-        "flag_emoji": "🇵🇹",
-        "team_name": "Portugal",
-        "photo_target": "Bernardo Silva"
-      },
-      {
-        "kind": "player",
         "id": 122511,
         "value": 1,
         "name": "Azzedine Ounahi",
@@ -2103,7 +2104,7 @@
       {
         "kind": "team",
         "id": 760,
-        "value": 4,
+        "value": 5,
         "name": "Spain",
         "flag_emoji": "🇪🇸",
         "team_name": "Spain",
