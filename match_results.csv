@@ -180,4 +180,6 @@ match_date,team,opponent,team_score,opponent_score,tournament,elo_change,new_elo
 2026-07-04,Morocco,Canada,3,0,World Cup,31,1947,4,8,C
 2026-07-04,Paraguay,France,0,1,World Cup,-10,1843,-1,21,D
 2026-07-05,Brazil,Norway,1,2,World Cup,-38,1993,-2,7,C
+2026-07-05,England,Mexico,3,2,World Cup,30,2076,0,4,L
+2026-07-05,Mexico,England,2,3,World Cup,-30,1913,-1,12,A
 2026-07-05,Norway,Brazil,2,1,World Cup,38,1972,4,8,I
