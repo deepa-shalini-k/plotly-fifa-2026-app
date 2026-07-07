@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-07-07T01:12:46Z",
+  "generated_at": "2026-07-07T05:09:36Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -56,6 +56,7 @@
     537377,
     537378,
     537379,
+    537380,
     537391,
     537392,
     537393,
@@ -377,6 +378,15 @@
         "flag_emoji": "🇸🇪",
         "team_name": "Sweden",
         "photo_target": "Yasin Ayari"
+      },
+      {
+        "kind": "player",
+        "id": 6507,
+        "value": 1,
+        "name": "Weston McKennie",
+        "flag_emoji": "🇺🇸",
+        "team_name": "United States",
+        "photo_target": "Weston McKennie"
       },
       {
         "kind": "player",
@@ -944,6 +954,15 @@
         "flag_emoji": "🇫🇷",
         "team_name": "France",
         "photo_target": "Manu Koné"
+      },
+      {
+        "kind": "player",
+        "id": 144470,
+        "value": 1,
+        "name": "Malik Tillman",
+        "flag_emoji": "🇺🇸",
+        "team_name": "United States",
+        "photo_target": "Malik Tillman"
       },
       {
         "kind": "player",
