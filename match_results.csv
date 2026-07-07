@@ -187,3 +187,5 @@ match_date,team,opponent,team_score,opponent_score,tournament,elo_change,new_elo
 2026-07-06,Portugal,Spain,0,1,World Cup,-18,1995,-1,6,K
 2026-07-06,Spain,Portugal,1,0,World Cup,18,2177,0,1,H
 2026-07-06,USA,Belgium,1,4,World Cup,-51,1747,-8,33,D
+2026-07-07,Argentina,Egypt,3,2,World Cup,7,2158,0,2,J
+2026-07-07,Egypt,Argentina,2,3,World Cup,-7,1787,0,25,G

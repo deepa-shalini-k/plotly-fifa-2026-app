@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-07-07T16:14:13Z",
+  "generated_at": "2026-07-07T18:23:47Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -57,6 +57,7 @@
     537378,
     537379,
     537380,
+    537381,
     537391,
     537392,
     537393,
@@ -189,6 +190,15 @@
         "flag_emoji": "🇵🇾",
         "team_name": "Paraguay",
         "photo_target": "Matías Galarza"
+      },
+      {
+        "kind": "player",
+        "id": 245582,
+        "value": 2,
+        "name": "Marwan Attia",
+        "flag_emoji": "🇪🇬",
+        "team_name": "Egypt",
+        "photo_target": "Marwan Attia"
       },
       {
         "kind": "player",
@@ -714,6 +724,15 @@
       },
       {
         "kind": "player",
+        "id": 251169,
+        "value": 1,
+        "name": "Oufa Shobeir",
+        "flag_emoji": "🇪🇬",
+        "team_name": "Egypt",
+        "photo_target": "Oufa Shobeir"
+      },
+      {
+        "kind": "player",
         "id": 232753,
         "value": 1,
         "name": "Odiljon Hamrobekov",
@@ -813,6 +832,15 @@
       },
       {
         "kind": "player",
+        "id": 295848,
+        "value": 1,
+        "name": "Mostafa Ziko",
+        "flag_emoji": "🇪🇬",
+        "team_name": "Egypt",
+        "photo_target": "Mostafa Ziko"
+      },
+      {
+        "kind": "player",
         "id": 121103,
         "value": 1,
         "name": "Moisés Caicedo",
@@ -900,15 +928,6 @@
         "flag_emoji": "🇺🇾",
         "team_name": "Uruguay",
         "photo_target": "Mathías Olivera"
-      },
-      {
-        "kind": "player",
-        "id": 245582,
-        "value": 1,
-        "name": "Marwan Attia",
-        "flag_emoji": "🇪🇬",
-        "team_name": "Egypt",
-        "photo_target": "Marwan Attia"
       },
       {
         "kind": "player",
@@ -1404,6 +1423,15 @@
         "flag_emoji": "🇦🇺",
         "team_name": "Australia",
         "photo_target": "Harry Souttar"
+      },
+      {
+        "kind": "player",
+        "id": 132389,
+        "value": 1,
+        "name": "Hamdy Fathy",
+        "flag_emoji": "🇪🇬",
+        "team_name": "Egypt",
+        "photo_target": "Hamdy Fathy"
       },
       {
         "kind": "player",
