@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-07-09T20:27:12Z",
+  "generated_at": "2026-07-09T22:03:18Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -59,6 +59,7 @@
     537380,
     537381,
     537382,
+    537383,
     537391,
     537392,
     537393,
@@ -110,6 +111,15 @@
         "flag_emoji": "🇵🇹",
         "team_name": "Portugal",
         "photo_target": "Renato Veiga"
+      },
+      {
+        "kind": "player",
+        "id": 8296,
+        "value": 3,
+        "name": "Issa Diop",
+        "flag_emoji": "🇲🇦",
+        "team_name": "Morocco",
+        "photo_target": "Issa Diop"
       },
       {
         "kind": "player",
@@ -227,15 +237,6 @@
         "flag_emoji": "🇭🇷",
         "team_name": "Croatia",
         "photo_target": "Ivan Perišić"
-      },
-      {
-        "kind": "player",
-        "id": 8296,
-        "value": 2,
-        "name": "Issa Diop",
-        "flag_emoji": "🇲🇦",
-        "team_name": "Morocco",
-        "photo_target": "Issa Diop"
       },
       {
         "kind": "player",
@@ -2197,7 +2198,7 @@
       {
         "kind": "team",
         "id": 773,
-        "value": 3,
+        "value": 4,
         "name": "France",
         "flag_emoji": "🇫🇷",
         "team_name": "France",
