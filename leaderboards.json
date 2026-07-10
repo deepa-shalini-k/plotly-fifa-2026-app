@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-07-10T20:54:40Z",
+  "generated_at": "2026-07-10T22:02:41Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -60,6 +60,7 @@
     537381,
     537382,
     537383,
+    537384,
     537391,
     537392,
     537393,
@@ -726,6 +727,15 @@
       },
       {
         "kind": "player",
+        "id": 217540,
+        "value": 1,
+        "name": "Pau Cubarsí",
+        "flag_emoji": "🇪🇸",
+        "team_name": "Spain",
+        "photo_target": "Pau Cubarsí"
+      },
+      {
+        "kind": "player",
         "id": 37924,
         "value": 1,
         "name": "Patrick Berg",
@@ -1128,6 +1138,15 @@
         "flag_emoji": "🇨🇻",
         "team_name": "Cape Verde Islands",
         "photo_target": "Kevin Pina"
+      },
+      {
+        "kind": "player",
+        "id": 3654,
+        "value": 1,
+        "name": "Kevin De Bruyne",
+        "flag_emoji": "🇧🇪",
+        "team_name": "Belgium",
+        "photo_target": "Kevin De Bruyne"
       },
       {
         "kind": "player",
@@ -1875,6 +1894,24 @@
         "flag_emoji": "🇲🇦",
         "team_name": "Morocco",
         "photo_target": "Azzedine Ounahi"
+      },
+      {
+        "kind": "player",
+        "id": 7884,
+        "value": 1,
+        "name": "Aymeric Laporte",
+        "flag_emoji": "🇪🇸",
+        "team_name": "Spain",
+        "photo_target": "Aymeric Laporte"
+      },
+      {
+        "kind": "player",
+        "id": 3656,
+        "value": 1,
+        "name": "Axel Witsel",
+        "flag_emoji": "🇧🇪",
+        "team_name": "Belgium",
+        "photo_target": "Axel Witsel"
       },
       {
         "kind": "player",

@@ -193,3 +193,5 @@ match_date,team,opponent,team_score,opponent_score,tournament,elo_change,new_elo
 2026-07-07,Switzerland,Colombia,4,3,World Cup,36,1979,4,7,B
 2026-07-09,France,Morocco,2,0,World Cup,22,2166,1,2,I
 2026-07-09,Morocco,France,0,2,World Cup,-22,1925,-1,12,C
+2026-07-10,Belgium,Spain,1,2,World Cup,-13,1948,0,10,G
+2026-07-10,Spain,Belgium,2,1,World Cup,13,2190,0,1,H
