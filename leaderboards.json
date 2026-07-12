@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-07-12T00:13:21Z",
+  "generated_at": "2026-07-12T04:02:25Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -62,6 +62,7 @@
     537383,
     537384,
     537385,
+    537386,
     537391,
     537392,
     537393,
@@ -473,6 +474,15 @@
         "flag_emoji": "🇧🇪",
         "team_name": "Belgium",
         "photo_target": "Timothy Castagne"
+      },
+      {
+        "kind": "player",
+        "id": 79953,
+        "value": 1,
+        "name": "Thiago Almada",
+        "flag_emoji": "🇦🇷",
+        "team_name": "Argentina",
+        "photo_target": "Thiago Almada"
       },
       {
         "kind": "player",
@@ -1106,6 +1116,15 @@
       },
       {
         "kind": "player",
+        "id": 3220,
+        "value": 1,
+        "name": "Lautaro Martínez",
+        "flag_emoji": "🇦🇷",
+        "team_name": "Argentina",
+        "photo_target": "Lautaro Martínez"
+      },
+      {
+        "kind": "player",
         "id": 1878,
         "value": 1,
         "name": "Ladislav Krejčí",
@@ -1256,6 +1275,15 @@
         "flag_emoji": "🇧🇦",
         "team_name": "Bosnia-Herzegovina",
         "photo_target": "Jovo Lukić"
+      },
+      {
+        "kind": "player",
+        "id": 170698,
+        "value": 1,
+        "name": "José Manuel López",
+        "flag_emoji": "🇦🇷",
+        "team_name": "Argentina",
+        "photo_target": "José Manuel López"
       },
       {
         "kind": "player",
@@ -1871,6 +1899,15 @@
       },
       {
         "kind": "player",
+        "id": 3483,
+        "value": 1,
+        "name": "Breel Embolo",
+        "flag_emoji": "🇨🇭",
+        "team_name": "Switzerland",
+        "photo_target": "Breel Embolo"
+      },
+      {
+        "kind": "player",
         "id": 8873,
         "value": 1,
         "name": "Brandon Mechele",
@@ -2203,6 +2240,15 @@
         "flag_emoji": "🇲🇽",
         "team_name": "Mexico",
         "photo_target": "César Montes"
+      },
+      {
+        "kind": "player",
+        "id": 3483,
+        "value": 1,
+        "name": "Breel Embolo",
+        "flag_emoji": "🇨🇭",
+        "team_name": "Switzerland",
+        "photo_target": "Breel Embolo"
       },
       {
         "kind": "player",
