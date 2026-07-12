@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-07-11T23:13:25Z",
+  "generated_at": "2026-07-12T00:13:21Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -61,6 +61,7 @@
     537382,
     537383,
     537384,
+    537385,
     537391,
     537392,
     537393,
@@ -1111,6 +1112,15 @@
         "flag_emoji": "🇨🇿",
         "team_name": "Czechia",
         "photo_target": "Ladislav Krejčí"
+      },
+      {
+        "kind": "player",
+        "id": 16068,
+        "value": 1,
+        "name": "Kristoffer Ajer",
+        "flag_emoji": "🇳🇴",
+        "team_name": "Norway",
+        "photo_target": "Kristoffer Ajer"
       },
       {
         "kind": "player",

@@ -195,3 +195,5 @@ match_date,team,opponent,team_score,opponent_score,tournament,elo_change,new_elo
 2026-07-09,Morocco,France,0,2,World Cup,-22,1925,-1,12,C
 2026-07-10,Belgium,Spain,1,2,World Cup,-13,1948,0,10,G
 2026-07-10,Spain,Belgium,2,1,World Cup,13,2190,0,1,H
+2026-07-11,England,Norway,2,1,World Cup,21,2097,0,4,L
+2026-07-11,Norway,England,1,2,World Cup,-21,1951,0,9,I
