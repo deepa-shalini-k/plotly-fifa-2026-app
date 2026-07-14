@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-07-14T20:08:45Z",
+  "generated_at": "2026-07-14T21:14:24Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -63,6 +63,7 @@
     537384,
     537385,
     537386,
+    537387,
     537391,
     537392,
     537393,
@@ -1134,6 +1135,15 @@
       },
       {
         "kind": "player",
+        "id": 3374,
+        "value": 1,
+        "name": "Kylian Mbappé",
+        "flag_emoji": "🇫🇷",
+        "team_name": "France",
+        "photo_target": "Kylian Mbappé"
+      },
+      {
+        "kind": "player",
         "id": 16068,
         "value": 1,
         "name": "Kristoffer Ajer",
@@ -1827,6 +1837,15 @@
       },
       {
         "kind": "player",
+        "id": 15863,
+        "value": 1,
+        "name": "Cucurella",
+        "flag_emoji": "🇪🇸",
+        "team_name": "Spain",
+        "photo_target": "Cucurella"
+      },
+      {
+        "kind": "player",
         "id": 102193,
         "value": 1,
         "name": "Crysencio Summerville",
@@ -2097,6 +2116,15 @@
       },
       {
         "kind": "player",
+        "id": 3368,
+        "value": 1,
+        "name": "Adrien Rabiot",
+        "flag_emoji": "🇫🇷",
+        "team_name": "France",
+        "photo_target": "Adrien Rabiot"
+      },
+      {
+        "kind": "player",
         "id": 53,
         "value": 1,
         "name": "Achraf Hakimi",
@@ -2273,7 +2301,7 @@
       {
         "kind": "team",
         "id": 760,
-        "value": 5,
+        "value": 6,
         "name": "Spain",
         "flag_emoji": "🇪🇸",
         "team_name": "Spain",
