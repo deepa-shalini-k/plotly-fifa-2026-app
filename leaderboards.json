@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-07-15T20:38:21Z",
+  "generated_at": "2026-07-15T21:38:13Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -64,6 +64,7 @@
     537385,
     537386,
     537387,
+    537388,
     537391,
     537392,
     537393,
@@ -649,6 +650,15 @@
       },
       {
         "kind": "player",
+        "id": 2127,
+        "value": 1,
+        "name": "Rodrigo de Paul",
+        "flag_emoji": "🇦🇷",
+        "team_name": "Argentina",
+        "photo_target": "Rodrigo de Paul"
+      },
+      {
+        "kind": "player",
         "id": 2041,
         "value": 1,
         "name": "Rodrigo Bentancur",
@@ -1087,6 +1097,15 @@
         "flag_emoji": "🇨🇼",
         "team_name": "Curaçao",
         "photo_target": "Livano Comenencia"
+      },
+      {
+        "kind": "player",
+        "id": 46451,
+        "value": 1,
+        "name": "Lisandro Martínez",
+        "flag_emoji": "🇦🇷",
+        "team_name": "Argentina",
+        "photo_target": "Lisandro Martínez"
       },
       {
         "kind": "player",
@@ -1729,6 +1748,15 @@
       },
       {
         "kind": "player",
+        "id": 107330,
+        "value": 1,
+        "name": "Elliot Anderson",
+        "flag_emoji": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+        "team_name": "England",
+        "photo_target": "Elliot Anderson"
+      },
+      {
+        "kind": "player",
         "id": 118981,
         "value": 1,
         "name": "Elijah Just",
@@ -1852,6 +1880,15 @@
         "flag_emoji": "🇳🇱",
         "team_name": "Netherlands",
         "photo_target": "Crysencio Summerville"
+      },
+      {
+        "kind": "player",
+        "id": 45735,
+        "value": 1,
+        "name": "Christian Romero",
+        "flag_emoji": "🇦🇷",
+        "team_name": "Argentina",
+        "photo_target": "Christian Romero"
       },
       {
         "kind": "player",
