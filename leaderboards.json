@@ -1,7 +1,7 @@
 {
   "snapshot_version": 1,
   "strict_build": true,
-  "generated_at": "2026-07-19T21:30:15Z",
+  "generated_at": "2026-07-19T22:29:33Z",
   "processed_match_ids": [
     537327,
     537328,
@@ -66,6 +66,7 @@
     537387,
     537388,
     537389,
+    537390,
     537391,
     537392,
     537393,
@@ -225,6 +226,24 @@
         "flag_emoji": "🇨🇦",
         "team_name": "Canada",
         "photo_target": "Luc De Fougerolles"
+      },
+      {
+        "kind": "player",
+        "id": 46451,
+        "value": 2,
+        "name": "Lisandro Martínez",
+        "flag_emoji": "🇦🇷",
+        "team_name": "Argentina",
+        "photo_target": "Lisandro Martínez"
+      },
+      {
+        "kind": "player",
+        "id": 3214,
+        "value": 2,
+        "name": "Leandro Paredes",
+        "flag_emoji": "🇦🇷",
+        "team_name": "Argentina",
+        "photo_target": "Leandro Paredes"
       },
       {
         "kind": "player",
@@ -1101,12 +1120,12 @@
       },
       {
         "kind": "player",
-        "id": 46451,
+        "id": 82990,
         "value": 1,
-        "name": "Lisandro Martínez",
+        "name": "Lionel Scaloni",
         "flag_emoji": "🇦🇷",
         "team_name": "Argentina",
-        "photo_target": "Lisandro Martínez"
+        "photo_target": "Lionel Scaloni"
       },
       {
         "kind": "player",
@@ -1116,15 +1135,6 @@
         "flag_emoji": "🇨🇦",
         "team_name": "Canada",
         "photo_target": "Liam Millar"
-      },
-      {
-        "kind": "player",
-        "id": 3214,
-        "value": 1,
-        "name": "Leandro Paredes",
-        "flag_emoji": "🇦🇷",
-        "team_name": "Argentina",
-        "photo_target": "Leandro Paredes"
       },
       {
         "kind": "player",
@@ -1749,6 +1759,15 @@
       },
       {
         "kind": "player",
+        "id": 102603,
+        "value": 1,
+        "name": "Enzo Fernández",
+        "flag_emoji": "🇦🇷",
+        "team_name": "Argentina",
+        "photo_target": "Enzo Fernández"
+      },
+      {
+        "kind": "player",
         "id": 107330,
         "value": 1,
         "name": "Elliot Anderson",
@@ -2118,6 +2137,15 @@
       },
       {
         "kind": "player",
+        "id": 45681,
+        "value": 1,
+        "name": "Alexis Mac Allister",
+        "flag_emoji": "🇦🇷",
+        "team_name": "Argentina",
+        "photo_target": "Alexis Mac Allister"
+      },
+      {
+        "kind": "player",
         "id": 250206,
         "value": 1,
         "name": "Alex Arce",
@@ -2300,6 +2328,15 @@
       },
       {
         "kind": "player",
+        "id": 102603,
+        "value": 1,
+        "name": "Enzo Fernández",
+        "flag_emoji": "🇦🇷",
+        "team_name": "Argentina",
+        "photo_target": "Enzo Fernández"
+      },
+      {
+        "kind": "player",
         "id": 39246,
         "value": 1,
         "name": "César Montes",
@@ -2339,7 +2376,7 @@
       {
         "kind": "team",
         "id": 760,
-        "value": 6,
+        "value": 7,
         "name": "Spain",
         "flag_emoji": "🇪🇸",
         "team_name": "Spain",
